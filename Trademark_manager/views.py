@@ -86,15 +86,12 @@ class Form_1_PDFGEN(generics.RetrieveAPIView):
     def get(self, request, pk):
         filename = f'Form_1_PDF_ID_{pk}.pdf'
         input = self.get_object().html
+        pdfkit.from_string(input, f"Trademark_manager/GeneratedForms/{filename}")
         try:
             return FileResponse(
-                open( pdfkit.from_string(input, f"{filename}"), 'rb'),
-                content_type='application/pdf'
-                )
-            # return FileResponse(
-            # open('../GeneratedForms/'+filename, 'rb'),
-            # content_type='application/pdf'
-            # )
+            open(f"Trademark_manager/GeneratedForms/{filename}", 'rb'),
+            content_type='application/pdf'
+            )
         except FileNotFoundError:
             raise Http404()
 
