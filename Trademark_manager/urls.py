@@ -21,7 +21,8 @@ urlpatterns = [
     path('Form22/<int:pk>', views.Form_22_APIView.as_view()),
     path('Form17/<int:pk>', views.Form_17_APIView.as_view()),
     path('Form12/<int:pk>', views.Form_12_APIView.as_view()),
-    path('File-Download/', views.FileDownload.as_view())
+    path('File-Download/', views.FileDownload.as_view()),
+    path('PDFGEN/<int:pk>', views.Form_1_PDFGEN.as_view())
 ]
 
 urlpatterns = format_suffix_patterns(urlpatterns)

@@ -79,6 +79,25 @@ class Form_1_APIView(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = Form_1_serializer
 
 
+class Form_1_PDFGEN(generics.RetrieveAPIView):
+    queryset = Form_1_Model.objects.all()
+    serializer_class = Form_1_serializer
+
+    def get(self, request, pk):
+        filename = f'Form_1_PDF_ID_{pk}.pdf'
+        input = self.get_object().html
+        try:
+            return FileResponse(
+                open( pdfkit.from_string(input, f"{filename}"), 'rb'),
+                content_type='application/pdf'
+                )
+            # return FileResponse(
+            # open('../GeneratedForms/'+filename, 'rb'),
+            # content_type='application/pdf'
+            # )
+        except FileNotFoundError:
+            raise Http404()
+
 
 class FileDownload(APIView):
     def get(self, request, format=None):
