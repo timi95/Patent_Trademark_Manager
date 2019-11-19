@@ -1,12 +1,12 @@
 from django.shortcuts import render
-from django.http import FileResponse, Http404
+from django.http import FileResponse, HttpResponse, Http404
 from .models import *
 from .serializers import *
 from rest_framework import generics
 from rest_framework.views import APIView
 from Patent_Trademark_Strings.Trademarks_Act_Form_33_String import Form33StringClass
 import pdfkit
-
+import os
 
 # Create your views here.
 class Form_3_APIViewList(generics.ListAPIView):
@@ -86,12 +86,19 @@ class Form_1_PDFGEN(generics.RetrieveAPIView):
     def get(self, request, pk):
         filename = f'Form_1_PDF_ID_{pk}.pdf'
         input = self.get_object().html
-        pdfkit.from_string(input, f"Trademark_manager/GeneratedForms/{filename}")
+
+
+
+
         try:
-            return FileResponse(
-            open(f"Trademark_manager/GeneratedForms/{filename}", 'rb'),
-            content_type='application/pdf'
-            )
+            config = pdfkit.configuration(wkhtmltopdf='/usr/bin/wkhtmltopdf')
+            pdfkit.from_string(input, f"Trademark_manager/GeneratedForms/{filename}", configuration=config)
+            pdf = open(f"Trademark_manager/GeneratedForms/{filename}", "rb")
+            response = HttpResponse(pdf.read(), content_type='application/pdf')
+            response['Content-Disposition'] = f'attachment; filename={filename}'
+            pdf.close()
+            os.remove(f"Trademark_manager/GeneratedForms/{filename}")
+            return response
         except FileNotFoundError:
             raise Http404()
 

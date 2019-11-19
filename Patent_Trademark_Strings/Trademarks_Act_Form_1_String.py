@@ -19,6 +19,7 @@ class Form1StringClass():
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
+        <meta name="pdfkit-page-size" content="Legal"/>
         <title>Trade Marks Act</title>
         <style>
             .letter_margin {
