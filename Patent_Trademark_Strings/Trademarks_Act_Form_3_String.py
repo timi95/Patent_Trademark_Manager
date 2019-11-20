@@ -13,7 +13,7 @@ class Form3StringClass():
         <title>Trade Marks Act</title>
         <style>
             .letter_margin {
-                margin: auto 25%;
+                margin: auto 15%;
                 line-height: 25px;
             }
             header{

@@ -12,6 +12,8 @@ from Patent_Trademark_Strings.Trademarks_Act_Form_1_String import Form1StringCla
 
 
 # Create your models here.
+
+
 class Form_33_Model(models.Model):
     trademark_number = models.CharField(default='default number', max_length=30)
     trademark_class = models.CharField(default='default class', max_length=30)
