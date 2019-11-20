@@ -9,6 +9,7 @@ import pdfkit
 import os
 
 # Create your views here.
+# GET
 class Form_3_APIViewList(generics.ListAPIView):
     queryset = Form_3_Model.objects.all()
     serializer_class = Form_3_serializer
@@ -44,7 +45,7 @@ class Form_1_APIViewList(generics.ListAPIView):
 
 
 
-
+# GET<Id>, POST, DELETE
 
 class Form_3_APIView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Form_3_Model.objects.all()
@@ -79,6 +80,8 @@ class Form_1_APIView(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = Form_1_serializer
 
 
+# PDF GENERATORS
+
 class Form_1_PDFGEN(generics.RetrieveAPIView):
     queryset = Form_1_Model.objects.all()
     serializer_class = Form_1_serializer
@@ -87,8 +90,131 @@ class Form_1_PDFGEN(generics.RetrieveAPIView):
         filename = f'Form_1_PDF_ID_{pk}.pdf'
         input = self.get_object().html
 
+        try:
+            config = pdfkit.configuration(wkhtmltopdf='/usr/bin/wkhtmltopdf')
+            pdfkit.from_string(input, f"Trademark_manager/GeneratedForms/{filename}", configuration=config)
+            pdf = open(f"Trademark_manager/GeneratedForms/{filename}", "rb")
+            response = HttpResponse(pdf.read(), content_type='application/pdf')
+            response['Content-Disposition'] = f'attachment; filename={filename}'
+            pdf.close()
+            os.remove(f"Trademark_manager/GeneratedForms/{filename}")
+            return response
+        except FileNotFoundError:
+            raise Http404()
 
 
+class Form_2_PDFGEN(generics.RetrieveAPIView):
+    queryset = Form_2_Model.objects.all()
+    serializer_class = Form_2_serializer
+
+    def get(self, request, pk):
+        filename = f'Form_2_PDF_ID_{pk}.pdf'
+        input = self.get_object().html
+
+        try:
+            config = pdfkit.configuration(wkhtmltopdf='/usr/bin/wkhtmltopdf')
+            pdfkit.from_string(input, f"Trademark_manager/GeneratedForms/{filename}", configuration=config)
+            pdf = open(f"Trademark_manager/GeneratedForms/{filename}", "rb")
+            response = HttpResponse(pdf.read(), content_type='application/pdf')
+            response['Content-Disposition'] = f'attachment; filename={filename}'
+            pdf.close()
+            os.remove(f"Trademark_manager/GeneratedForms/{filename}")
+            return response
+        except FileNotFoundError:
+            raise Http404()
+
+
+class Form_3_PDFGEN(generics.RetrieveAPIView):
+    queryset = Form_3_Model.objects.all()
+    serializer_class = Form_3_serializer
+
+    def get(self, request, pk):
+        filename = f'Form_3_PDF_ID_{pk}.pdf'
+        input = self.get_object().html
+
+        try:
+            config = pdfkit.configuration(wkhtmltopdf='/usr/bin/wkhtmltopdf')
+            pdfkit.from_string(input, f"Trademark_manager/GeneratedForms/{filename}", configuration=config)
+            pdf = open(f"Trademark_manager/GeneratedForms/{filename}", "rb")
+            response = HttpResponse(pdf.read(), content_type='application/pdf')
+            response['Content-Disposition'] = f'attachment; filename={filename}'
+            pdf.close()
+            os.remove(f"Trademark_manager/GeneratedForms/{filename}")
+            return response
+        except FileNotFoundError:
+            raise Http404()
+
+
+class Form_12_PDFGEN(generics.RetrieveAPIView):
+    queryset = Form_12_Model.objects.all()
+    serializer_class = Form_12_serializer
+
+    def get(self, request, pk):
+        filename = f'Form_12_PDF_ID_{pk}.pdf'
+        input = self.get_object().html
+
+        try:
+            config = pdfkit.configuration(wkhtmltopdf='/usr/bin/wkhtmltopdf')
+            pdfkit.from_string(input, f"Trademark_manager/GeneratedForms/{filename}", configuration=config)
+            pdf = open(f"Trademark_manager/GeneratedForms/{filename}", "rb")
+            response = HttpResponse(pdf.read(), content_type='application/pdf')
+            response['Content-Disposition'] = f'attachment; filename={filename}'
+            pdf.close()
+            os.remove(f"Trademark_manager/GeneratedForms/{filename}")
+            return response
+        except FileNotFoundError:
+            raise Http404()
+
+
+class Form_17_PDFGEN(generics.RetrieveAPIView):
+    queryset = Form_17_Model.objects.all()
+    serializer_class = Form_17_serializer
+
+    def get(self, request, pk):
+        filename = f'Form_17_PDF_ID_{pk}.pdf'
+        input = self.get_object().html
+
+        try:
+            config = pdfkit.configuration(wkhtmltopdf='/usr/bin/wkhtmltopdf')
+            pdfkit.from_string(input, f"Trademark_manager/GeneratedForms/{filename}", configuration=config)
+            pdf = open(f"Trademark_manager/GeneratedForms/{filename}", "rb")
+            response = HttpResponse(pdf.read(), content_type='application/pdf')
+            response['Content-Disposition'] = f'attachment; filename={filename}'
+            pdf.close()
+            os.remove(f"Trademark_manager/GeneratedForms/{filename}")
+            return response
+        except FileNotFoundError:
+            raise Http404()
+
+
+class Form_22_PDFGEN(generics.RetrieveAPIView):
+    queryset = Form_22_Model.objects.all()
+    serializer_class = Form_22_serializer
+
+    def get(self, request, pk):
+        filename = f'Form_22_PDF_ID_{pk}.pdf'
+        input = self.get_object().html
+
+        try:
+            config = pdfkit.configuration(wkhtmltopdf='/usr/bin/wkhtmltopdf')
+            pdfkit.from_string(input, f"Trademark_manager/GeneratedForms/{filename}", configuration=config)
+            pdf = open(f"Trademark_manager/GeneratedForms/{filename}", "rb")
+            response = HttpResponse(pdf.read(), content_type='application/pdf')
+            response['Content-Disposition'] = f'attachment; filename={filename}'
+            pdf.close()
+            os.remove(f"Trademark_manager/GeneratedForms/{filename}")
+            return response
+        except FileNotFoundError:
+            raise Http404()
+
+
+class Form_33_PDFGEN(generics.RetrieveAPIView):
+    queryset = Form_33_Model.objects.all()
+    serializer_class = Form_33_serializer
+
+    def get(self, request, pk):
+        filename = f'Form_33_PDF_ID_{pk}.pdf'
+        input = self.get_object().html
 
         try:
             config = pdfkit.configuration(wkhtmltopdf='/usr/bin/wkhtmltopdf')
@@ -114,10 +240,3 @@ class FileDownload(APIView):
             )
         except FileNotFoundError:
             raise Http404()
-
-
-def FileFactory(APIView):
-    print("FileFactory activating")
-    filename = "example.pdf"
-    input = Form_33_Model.objects.create().html.replace("\n", "")
-    return pdfkit.from_string(input, f"{filename}")
