@@ -2,8 +2,9 @@ from django.shortcuts import render
 from django.http import FileResponse, HttpResponse, Http404
 from .models import *
 from .serializers import *
-from rest_framework import generics, mixins
+from rest_framework import generics, filters, pagination
 from rest_framework.views import APIView
+from django_filters.rest_framework import DjangoFilterBackend
 import pdfkit
 import os
 
@@ -14,36 +15,65 @@ import os
 class Form_3_APIViewList(generics.ListAPIView):
     queryset = Form_3_Model.objects.all()
     serializer_class = Form_3_serializer
+    pagination_class = pagination.PageNumberPagination
+    filter_backends = [filters.SearchFilter, filters.OrderingFilter]
+    ordering_fields = ['name', 'html']
+    search_fields = ['name', 'html']
 
 
 class Form_33_APIViewList(generics.ListAPIView):
     queryset = Form_33_Model.objects.all()
     serializer_class = Form_33_serializer
+    pagination_class = pagination.PageNumberPagination
+    filter_backends = [filters.SearchFilter, filters.OrderingFilter]
+    ordering_fields = ['name', 'html']
+    search_fields = ['name', 'html']
 
 
 class Form_2_APIViewList(generics.ListAPIView):
     queryset = Form_2_Model.objects.all()
     serializer_class = Form_2_serializer
+    pagination_class = pagination.PageNumberPagination
+    filter_backends = [filters.SearchFilter, filters.OrderingFilter]
+    ordering_fields = ['name', 'html']
+    search_fields = ['name', 'html']
 
 
 class Form_22_APIViewList(generics.ListAPIView):
     queryset = Form_22_Model.objects.all()
     serializer_class = Form_22_serializer
+    pagination_class = pagination.PageNumberPagination
+    filter_backends = [filters.SearchFilter, filters.OrderingFilter]
+    ordering_fields = ['name', 'html']
+    search_fields = ['name', 'html']
 
 
 class Form_17_APIViewList(generics.ListAPIView):
     queryset = Form_17_Model.objects.all()
     serializer_class = Form_17_serializer
+    pagination_class = pagination.PageNumberPagination
+    filter_backends = [filters.SearchFilter, filters.OrderingFilter]
+    ordering_fields = ['name', 'html']
+    search_fields = ['name', 'html']
 
 
 class Form_12_APIViewList(generics.ListAPIView):
     queryset = Form_12_Model.objects.all()
     serializer_class = Form_12_serializer
+    pagination_class = pagination.PageNumberPagination
+    filter_backends = [filters.SearchFilter, filters.OrderingFilter]
+    ordering_fields = ['name', 'html']
+    search_fields = ['name', 'html']
 
 
 class Form_1_APIViewList(generics.ListAPIView):
     queryset = Form_1_Model.objects.all()
     serializer_class = Form_1_serializer
+    pagination_class = pagination.PageNumberPagination
+    filter_backends = [filters.SearchFilter, filters.OrderingFilter]
+    ordering_fields = ['name', 'html']
+    search_fields = ['name', 'html']
+
 
 
 # GET<Id>, POST, DELETE

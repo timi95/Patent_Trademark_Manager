@@ -10,11 +10,11 @@ from Patent_Trademark_Strings.Trademarks_Act_Form_12_String import Form12StringC
 from Patent_Trademark_Strings.Trademarks_Act_Form_1_String import Form1StringClass
 
 
-
 # Create your models here.
 
 
 class Form_33_Model(models.Model):
+    name = models.CharField(default='Document name', max_length=30)
     trademark_number = models.CharField(default='default number', max_length=30)
     trademark_class = models.CharField(default='default class', max_length=30)
     trademark_date = models.DateField(default=datetime.date.today)
@@ -32,6 +32,7 @@ class Form_33_Model(models.Model):
 
 
 class Form_22_Model(models.Model):
+    name = models.CharField(default='Document name', max_length=30)
     company_name = models.CharField(
                                 default='default company_name',
                                 max_length=300)
@@ -73,6 +74,7 @@ class Form_22_Model(models.Model):
 
 
 class Form_17_Model(models.Model):
+    name = models.CharField(default='Document name', max_length=30)
     company_name = models.CharField(
                                     default='default company_name',
                                     max_length=300)
@@ -109,6 +111,7 @@ class Form_17_Model(models.Model):
 
 
 class Form_12_Model(models.Model):
+    name = models.CharField(default='Document name', max_length=30)
     fee = models.CharField(
                             default='default fee',
                             max_length=300)
@@ -150,6 +153,7 @@ class Form_12_Model(models.Model):
 
 
 class Form_3_Model(models.Model):
+    name = models.CharField(default='Document name', max_length=30)
     image_url = models.URLField(
                 default='default/url/string', validators=[URLValidator()])
     html = models.TextField(
@@ -162,6 +166,7 @@ class Form_3_Model(models.Model):
 
 
 class Form_2_Model(models.Model):
+    name = models.CharField(default='Document name', max_length=30)
     trademark_class = models.CharField(
                              default='default class',
                              max_length=300)
@@ -191,6 +196,7 @@ class Form_2_Model(models.Model):
 
 
 class Form_1_Model(models.Model):
+    name = models.CharField(default='Document name', max_length=30)
     person_name = models.CharField(
                               default='default person name',
                               max_length=300)
