@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path , include
+from django.urls import path, include
 from rest_framework_swagger.views import get_swagger_view
 from rest_framework.documentation import include_docs_urls
 
@@ -25,6 +25,7 @@ urlpatterns = [
     path('', get_swagger_view(title=project_name)),
     path('documents/', include_docs_urls(title=project_name)),
 
+    path('ApplicationForm_manager/', include('ApplicationForm_manager.urls')),
     path('Patent_manager/', include('Patent_manager.urls')),
     path('Trademark_manager/', include('Trademark_manager.urls'))
 ]
