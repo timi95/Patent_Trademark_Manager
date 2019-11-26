@@ -7,6 +7,9 @@ from rest_framework_jwt.views import obtain_jwt_token, refresh_jwt_token
 urlpatterns = [
     path('profile/', views.TrademarkProfile_view.as_view()),
     path('particulars/', views.TrademarkParticulars_view.as_view()),
+    path('action1/', views.TrademarkAction2_view.as_view()),
+    path('action2/', views.TrademarkAction1_view.as_view()),
+
 
 ]
 

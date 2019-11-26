@@ -8,6 +8,18 @@ class TrademarkProfile_serializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
+class TrademarkAction1_serializer(serializers.ModelSerializer):
+    class Meta:
+        model = TrademarkAction1
+        fields = '__all__'
+
+
+class TrademarkAction2_serializer(serializers.ModelSerializer):
+    class Meta:
+        model = TrademarkAction2
+        fields = '__all__'
+
+
 class TrademarkParticulars_serializer(serializers.ModelSerializer):
     class Meta:
         model = TrademarkParticulars
