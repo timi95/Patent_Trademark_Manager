@@ -24,3 +24,8 @@ class TrademarkParticulars_serializer(serializers.ModelSerializer):
     class Meta:
         model = TrademarkParticulars
         fields = '__all__'
+
+class Profile_Actions_Relative_serializer(serializers.ModelSerializer):
+    class Meta:
+        model = Profile_Actions_Relative
+        fields = '__all__'

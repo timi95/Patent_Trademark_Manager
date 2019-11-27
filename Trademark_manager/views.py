@@ -24,3 +24,9 @@ class TrademarkAction2_view(generics.ListCreateAPIView):
 class TrademarkParticulars_view(generics.ListCreateAPIView):
     queryset = TrademarkParticulars.objects.all()
     serializer_class = TrademarkParticulars_serializer
+
+
+class Profile_Actions_Relative_view(generics.ListCreateAPIView):
+    """docstring for Profile_Actions_Relative."""
+    queryset = Profile_Actions_Relative.objects.all()
+    serializer_class = Profile_Actions_Relative_serializer

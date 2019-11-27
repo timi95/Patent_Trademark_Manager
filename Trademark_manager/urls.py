@@ -9,6 +9,7 @@ urlpatterns = [
     path('particulars/', views.TrademarkParticulars_view.as_view()),
     path('action1/', views.TrademarkAction2_view.as_view()),
     path('action2/', views.TrademarkAction1_view.as_view()),
+    path('full_profile/', views.Profile_Actions_Relative_view.as_view())
 
 
 ]
