@@ -30,3 +30,9 @@ class Profile_Actions_Relative_view(generics.ListCreateAPIView):
     """docstring for Profile_Actions_Relative."""
     queryset = Profile_Actions_Relative.objects.all()
     serializer_class = Profile_Actions_Relative_serializer
+
+
+class Profile_Actions_Relative_RUD_view(generics.RetrieveUpdateDestroyAPIView):
+    """docstring for Profile_Actions_Relative."""
+    queryset = Profile_Actions_Relative.objects.all()
+    serializer_class = Profile_Actions_Relative_serializer
