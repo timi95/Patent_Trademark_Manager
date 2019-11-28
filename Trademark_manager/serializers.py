@@ -26,10 +26,7 @@ class TrademarkParticulars_serializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class Profile_Actions_Relative_serializer(serializers.ModelSerializer):
-    profile = TrademarkProfile()
-    action1 = TrademarkAction1()
-    action2 = TrademarkAction2()
     class Meta:
         model = Profile_Actions_Relative
-        # fields = ('profile','action1','action2')
         fields = '__all__'
+        depth = 2

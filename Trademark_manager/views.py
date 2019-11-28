@@ -11,6 +11,11 @@ class TrademarkProfile_view(generics.ListCreateAPIView):
     serializer_class = TrademarkProfile_serializer
 
 
+class TrademarkProfile_RUD_view(generics.RetrieveDestroyAPIView):
+    queryset = TrademarkProfile.objects.all()
+    serializer_class = TrademarkProfile_serializer
+
+
 class TrademarkAction1_view(generics.ListCreateAPIView):
     queryset = TrademarkAction1.objects.all()
     serializer_class = TrademarkAction1_serializer
