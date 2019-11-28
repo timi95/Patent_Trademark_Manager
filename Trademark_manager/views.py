@@ -21,9 +21,9 @@ class TrademarkAction1_view(generics.ListCreateAPIView):
     serializer_class = TrademarkAction1_serializer
 
 
-class TrademarkAction2_view(generics.ListCreateAPIView):
-    queryset = TrademarkAction2.objects.all()
-    serializer_class = TrademarkAction2_serializer
+# class TrademarkAction2_view(generics.ListCreateAPIView):
+#     queryset = TrademarkAction2.objects.all()
+#     serializer_class = TrademarkAction2_serializer
 
 
 class TrademarkParticulars_view(generics.ListCreateAPIView):
@@ -31,13 +31,13 @@ class TrademarkParticulars_view(generics.ListCreateAPIView):
     serializer_class = TrademarkParticulars_serializer
 
 
-class Profile_Actions_Relative_view(generics.ListCreateAPIView):
-    """docstring for Profile_Actions_Relative."""
-    queryset = Profile_Actions_Relative.objects.all()
-    serializer_class = Profile_Actions_Relative_serializer
-
-
-class Profile_Actions_Relative_RUD_view(generics.RetrieveUpdateDestroyAPIView):
-    """docstring for Profile_Actions_Relative."""
-    queryset = Profile_Actions_Relative.objects.all()
-    serializer_class = Profile_Actions_Relative_serializer
+# class Profile_Actions_Relative_view(generics.ListCreateAPIView):
+#     """docstring for Profile_Actions_Relative."""
+#     queryset = Profile_Actions_Relative.objects.all()
+#     serializer_class = Profile_Actions_Relative_serializer
+#
+#
+# class Profile_Actions_Relative_RUD_view(generics.RetrieveUpdateDestroyAPIView):
+#     """docstring for Profile_Actions_Relative."""
+#     queryset = Profile_Actions_Relative.objects.all()
+#     serializer_class = Profile_Actions_Relative_serializer
