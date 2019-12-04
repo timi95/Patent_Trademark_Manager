@@ -5,10 +5,16 @@ from django.db import models
 # Create your models here.
 
 
-class TrademarkAction1(models.Model):
-    action_name = models.CharField(default="default action", max_length=50)
-    # profile = models.ForeignKey(TrademarkProfile, on_delete=models.CASCADE, null=True)
-
+class SearchAction(models.Model):
+    clerk_searching = models.CharField()
+    conflicting_mark = models.CharField()
+    date_of_search_report = models.CharField()
+    date_reported_to_client = models.CharField()
+    official_search_fee = models.CharField()
+    reported_to_client = models.CharField()
+    search_instruction_date = models.CharField()
+    search_status = models.CharField()
+    search_type =  models.CharField()
 
 class TrademarkProfile(models.Model):
     client_name = models.CharField(default="default client name", max_length=50)
