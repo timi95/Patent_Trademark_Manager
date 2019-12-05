@@ -12,6 +12,12 @@ class RenewalAction(models.Model):
     next_renewal_due_date = models.CharField()
     next_renewal_due_month = models.CharField()
     official_fee_renewal = models.CharField()
+    renewal_cert_facilitation_sent = models.CharField()
+    renewal_due_date = models.CharField()
+    renewal_due_month = models.CharField()
+    renewal_instruction_date = models.CharField()
+    renewal_instruction_month = models.CharField()
+    renewal_status = models.CharField()
     
 
 
