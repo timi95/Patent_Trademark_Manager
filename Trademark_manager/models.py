@@ -7,6 +7,12 @@ from django.db import models
 
 class RenewalAction(models.Model):
     date_renewal_cert_facilitation_sent = models.CharField()
+    dt_abj_instructed_renewal = models.CharField()
+    dt_renew_cert_received = models.CharField()
+    next_renewal_due_date = models.CharField()
+    next_renewal_due_month = models.CharField()
+    official_fee_renewal = models.CharField()
+    
 
 
 class SearchAction(models.Model):
