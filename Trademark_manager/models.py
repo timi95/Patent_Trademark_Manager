@@ -5,6 +5,10 @@ from django.db import models
 # Create your models here.
 
 
+class RenewalAction(models.Model):
+    date_renewal_cert_facilitation_sent = models.CharField()
+
+
 class SearchAction(models.Model):
     clerk_searching = models.CharField()
     conflicting_mark = models.CharField()
@@ -45,5 +49,6 @@ class TrademarkProfile(models.Model):
     registration_no = models.CharField()
     trademark_description = models.CharField()
 
-    action1 = models.ForeignKey(TrademarkAction1, on_delete=models.CASCADE, null=True)
+    search_action = models.ForeignKey(SearchAction, on_delete=models.CASCADE, null=True)
+    renewal_action = models.ForeignKey(RenewalAction, on_delete=models.CASCADE, null=True)
     # action2 = models.ForeignKey(TrademarkAction2, on_delete=models.CASCADE, null=True, related_name='action2')
