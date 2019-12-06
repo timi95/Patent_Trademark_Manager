@@ -5,6 +5,10 @@ from django.db import models
 # Create your models here.
 
 
+class CertificateProcurementAction(models.Model):
+    pass
+
+
 class RegistrationAction(models.Model):
     acceptance_date = models.CharField()
     acceptance_facilitation_sent = models.CharField()
