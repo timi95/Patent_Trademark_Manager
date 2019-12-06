@@ -12,7 +12,27 @@ class RegistrationAction(models.Model):
     acknowledgement_facilitation_sent = models.CharField()
     application_no = models.CharField()
     trademark_class = models.CharField()
-    pass
+    clerk_registering = models.CharField()
+    colour_limitation = models.CharField()
+    date_acceptance_facilitation_sent = models.CharField()
+    date_acknowledgement_facilitation_sent = models.CharField()
+    date_of_registration_instruction = models.CharField()
+    date_of_registration_instruction_received = models.CharField()
+    date_registration_cert_facilitation_sent = models.CharField()
+    date_sent_for_publication = models.CharField()
+    date_abj_instructed_for_registration = models.CharField()
+    goods = models.CharField()
+    journal_date = models.CharField()
+    journal_no = models.CharField()
+    journal_page = models.CharField()
+    journal_vol = models.CharField()
+    official_fee_registration = models.CharField()
+    publication = models.CharField()
+    registration_status = models.CharField()
+    registration_filing_month = models.CharField()
+    registration_no = models.CharField()
+    registraion_cert_facilitation_sent = models.CharField()
+    tm_registration_filing_date = models.CharField()
 
 
 class RenewalAction(models.Model):
