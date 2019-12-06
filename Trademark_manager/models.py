@@ -5,6 +5,16 @@ from django.db import models
 # Create your models here.
 
 
+class RegistrationAction(models.Model):
+    acceptance_date = models.CharField()
+    acceptance_facilitation_sent = models.CharField()
+    acknowledgement_date = models.CharField()
+    acknowledgement_facilitation_sent = models.CharField()
+    application_no = models.CharField()
+    trademark_class = models.CharField()
+    pass
+
+
 class RenewalAction(models.Model):
     date_renewal_cert_facilitation_sent = models.CharField()
     dt_abj_instructed_renewal = models.CharField()
@@ -18,7 +28,6 @@ class RenewalAction(models.Model):
     renewal_instruction_date = models.CharField()
     renewal_instruction_month = models.CharField()
     renewal_status = models.CharField()
-    
 
 
 class SearchAction(models.Model):
