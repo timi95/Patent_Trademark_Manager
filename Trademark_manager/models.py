@@ -6,7 +6,18 @@ from django.db import models
 
 
 class CertificateProcurementAction(models.Model):
-    pass
+    date_procurement_instructed = models.CharField()
+    application_no = models.CharField()
+    trademark_description = models.CharField()
+    journal_no = models.CharField()
+    journal_vol = models.CharField()
+    journal_date = models.CharField()
+    journal_page = models.CharField()
+    date_clerk_instructed_to_procure = models.CharField()
+    cert_procurement_status = models.CharField()
+    date_registration_certificate = models.CharField()
+    registration_no = models.CharField()
+    official_fee_certificate_issuance = models.CharField()
 
 
 class RegistrationAction(models.Model):
@@ -96,4 +107,5 @@ class TrademarkProfile(models.Model):
 
     search_action = models.ForeignKey(SearchAction, on_delete=models.CASCADE, null=True)
     renewal_action = models.ForeignKey(RenewalAction, on_delete=models.CASCADE, null=True)
-    # action2 = models.ForeignKey(TrademarkAction2, on_delete=models.CASCADE, null=True, related_name='action2')
+    registration_action = models.ForeignKey(RegistrationAction, on_delete=models.CASCADE, null=True)
+    certificate_procurement_action = models.ForeignKey(CertificateProcurementAction, on_delete=models.CASCADE, null=True)
