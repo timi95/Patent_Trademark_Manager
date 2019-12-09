@@ -14,7 +14,6 @@ class AmendementAction(models.Model):
     date_amendement_received = models.CharField(max_length=50)
 
 
-
 class AssignmentMergerAction(models.Model):
     assignment_instruction_date = models.CharField(max_length=50)
     assignment_instruction_month = models.CharField(max_length=50)
