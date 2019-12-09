@@ -20,6 +20,14 @@ class CertificateProcurementAction(models.Model):
     official_fee_certificate_issuance = models.CharField(max_length=50)
 
 
+class ReclassificationAction(models.Model):
+    date_reclassification_instruction = models.CharField(max_length=50)
+    date_abj_instructed_reclassify = models.CharField(max_length=50)
+    reclassification_status = models.CharField(max_length=50)
+    date_publication_of_reclassification = models.CharField(max_length=50)
+    journal_pg_reclassification = models.CharField(max_length=50)
+
+
 class RegistrationAction(models.Model):
     acceptance_date = models.CharField(max_length=50)
     acceptance_facilitation_sent = models.CharField(max_length=50)
