@@ -5,6 +5,16 @@ from django.db import models
 # Create your models here.
 
 
+class AmendementAction(models.Model):
+    ammendement_instruction_date = models.CharField(max_length=50)
+    date_ammendement_instruction_received = models.CharField(max_length=50)
+    nature_of_amendement = models.CharField(max_length=50)
+    date_amending_clerk_instructed = models.CharField(max_length=50)
+    status_of_amendement = models.CharField(max_length=50)
+    date_amendement_received = models.CharField(max_length=50)
+
+
+
 class AssignmentMergerAction(models.Model):
     assignment_instruction_date = models.CharField(max_length=50)
     assignment_instruction_month = models.CharField(max_length=50)
