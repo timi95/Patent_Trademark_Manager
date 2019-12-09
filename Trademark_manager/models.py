@@ -5,6 +5,22 @@ from django.db import models
 # Create your models here.
 
 
+class AssignmentMergerAction(models.Model):
+    assignment_instruction_date = models.CharField(max_length=50)
+    assignment_instruction_month = models.CharField(max_length=50)
+    assignee = models.CharField(max_length=50)
+    assignee_address = models.CharField(max_length=50)
+    assignor = models.CharField(max_length=50)
+    assignor_address = models.CharField(max_length=50)
+    clerk_assigning = models.CharField(max_length=50)
+    date_abj_instructed_assignment = models.CharField(max_length=50)
+    date_assignment_certificate_received = models.CharField(max_length=50)
+    date_facillitation_assignment_cert_sent = models.CharField(max_length=50)
+    date_facillitation_assignment_cert_sent_sent = models.CharField(max_length=50)
+    official_fee_assignment = models.CharField(max_length=50)
+    status_assignment_registration = models.CharField(max_length=50)
+
+
 class CertificateProcurementAction(models.Model):
     date_procurement_instructed = models.CharField(max_length=50)
     application_no = models.CharField(max_length=50)
