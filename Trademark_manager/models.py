@@ -20,6 +20,19 @@ class CertificateProcurementAction(models.Model):
     official_fee_certificate_issuance = models.CharField(max_length=50)
 
 
+class ChangeName_AddressAction(models.Model):
+    change_of_address_instruction_date = models.CharField(max_length=50)
+    change_of_name_instruction_date = models.CharField(max_length=50)
+    date_received_change_of_address_certificate = models.CharField(max_length=50)
+    date_received_change_of_name_certificate = models.CharField(max_length=50)
+    new_address_of_pptr = models.CharField(max_length=50)
+    new_name_of_pptr = models.CharField(max_length=50)
+    official_fee_change_name = models.CharField(max_length=50)
+    official_fee_change_address = models.CharField(max_length=50)
+    status_change_of_name = models.CharField(max_length=50)
+    status_change_of_address = models.CharField(max_length=50)
+
+
 class ReclassificationAction(models.Model):
     date_reclassification_instruction = models.CharField(max_length=50)
     date_abj_instructed_reclassify = models.CharField(max_length=50)
