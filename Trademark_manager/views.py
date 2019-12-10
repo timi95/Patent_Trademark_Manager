@@ -6,33 +6,49 @@ from .serializers import *
 
 
 # Create your views here.
-class TrademarkProfile_view(generics.ListCreateAPIView):
+class TrademarkProfile_view(generics.ListCreateAPIView,
+                            generics.RetrieveUpdateDestroyAPIView):
     queryset = TrademarkProfile.objects.all()
     serializer_class = TrademarkProfile_serializer
 
 
-class TrademarkProfile_RUD_view(generics.RetrieveDestroyAPIView):
-    queryset = TrademarkProfile.objects.all()
-    serializer_class = TrademarkProfile_serializer
+class AmendementAction_view(generics.ListCreateAPIView,
+                            generics.RetrieveUpdateDestroyAPIView):
+    queryset = AmendementAction.objects.all()
+    serializer_class = AmendementAction_serializer
 
 
-# class TrademarkAction1_view(generics.ListCreateAPIView):
-#     queryset = TrademarkAction1.objects.all()
-#     serializer_class = TrademarkAction1_serializer
+class AssignmentMergerAction_view(generics.ListCreateAPIView,
+                                  generics.RetrieveUpdateDestroyAPIView):
+    queryset = AssignmentMergerAction.objects.all()
+    serializer_class = AssignmentMergerAction_serializer
 
 
-# class TrademarkAction2_view(generics.ListCreateAPIView):
-#     queryset = TrademarkAction2.objects.all()
-#     serializer_class = TrademarkAction2_serializer
+class CertificateProcurementAction_view(generics.ListCreateAPIView,
+                                        generics.RetrieveUpdateDestroyAPIView):
+    queryset = CertificateProcurementAction.objects.all()
+    serializer_class = CertificateProcurementAction_serializer
 
 
-# class Profile_Actions_Relative_view(generics.ListCreateAPIView):
-#     """docstring for Profile_Actions_Relative."""
-#     queryset = Profile_Actions_Relative.objects.all()
-#     serializer_class = Profile_Actions_Relative_serializer
-#
-#
-# class Profile_Actions_Relative_RUD_view(generics.RetrieveUpdateDestroyAPIView):
-#     """docstring for Profile_Actions_Relative."""
-#     queryset = Profile_Actions_Relative.objects.all()
-#     serializer_class = Profile_Actions_Relative_serializer
+class ChangeName_AddressAction_view(generics.ListCreateAPIView,
+                                        generics.RetrieveUpdateDestroyAPIView):
+    queryset = ChangeName_AddressAction.objects.all()
+    serializer_class = ChangeName_AddressAction_serializer
+
+
+class RegistrationAction_view(generics.ListCreateAPIView,
+                              generics.RetrieveUpdateDestroyAPIView):
+    queryset = RegistrationAction.objects.all()
+    serializer_class = RegistrationAction_serializer
+
+
+class RenewalAction_view(generics.ListCreateAPIView,
+                         generics.RetrieveUpdateDestroyAPIView):
+    queryset = RenewalAction.objects.all()
+    serializer_class = RenewalAction_serializer
+
+
+class SearchAction_view(generics.ListCreateAPIView,
+                         generics.RetrieveUpdateDestroyAPIView):
+    queryset = SearchAction.objects.all()
+    serializer_class = SearchAction_serializer

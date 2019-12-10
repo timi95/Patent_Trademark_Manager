@@ -10,40 +10,48 @@ class TrademarkProfile_serializer(serializers.ModelSerializer):
 
 
 class AmendementAction_serializer(serializers.ModelSerializer):
-    model = AmendementAction
-    fields = '__all__'
+    class Meta:
+        model = AmendementAction
+        fields = '__all__'
 
 
 class AssignmentMergerAction_serializer(serializers.ModelSerializer):
-    model = AssignmentMergerAction
-    fields = '__all__'
+    class Meta:
+        model = AssignmentMergerAction
+        fields = '__all__'
 
 
 class CertificateProcurementAction_serializer(serializers.ModelSerializer):
-    model = CertificateProcurementAction
-    fields = '__all__'
+    class Meta:
+        model = CertificateProcurementAction
+        fields = '__all__'
 
 
 class ChangeName_AddressAction_serializer(serializers.ModelSerializer):
-    model = ChangeName_AddressAction
-    fields = '__all__'
+    class Meta:
+        fields = '__all__'
+        model = ChangeName_AddressAction
 
 
 class ReclassificationAction_serializer(serializers.ModelSerializer):
-    model = ReclassificationAction
-    fields = '__all__'
+    class Meta:
+        fields = '__all__'
+        model = ReclassificationAction
 
 
 class RegistrationAction_serializer(serializers.ModelSerializer):
-    model = RegistrationAction
-    fields = '__all__'
+    class Meta:
+        fields = '__all__'
+        model = RegistrationAction
 
 
 class RenewalAction_serializer(serializers.ModelSerializer):
-    model = RenewalAction
-    fields = '__all__'
+    class Meta:
+        fields = '__all__'
+        model = RenewalAction
 
 
-class SearchAction(serializers.ModelSerializer):
-    model = SearchAction
-    fields = '__all__'
+class SearchAction_serializer(serializers.ModelSerializer):
+    class Meta:
+        fields = '__all__'
+        model = SearchAction
