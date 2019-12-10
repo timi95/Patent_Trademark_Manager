@@ -12,3 +12,13 @@ class TrademarkProfile_serializer(serializers.ModelSerializer):
 class AmendementAction_serializer(serializers.ModelSerializer):
     model = AmendementAction
     fields = '__all__'
+
+
+class AssignmentMergerAction_serializer(serializers.ModelSerializer):
+    model = AssignmentMergerAction
+    fields = '__all__'
+
+
+class CertificateProcurementAction_serializer(serializers.ModelSerializer):
+    model = CertificateProcurementAction
+    fields = '__all__'
