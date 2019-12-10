@@ -6,16 +6,9 @@ class TrademarkProfile_serializer(serializers.ModelSerializer):
     class Meta:
         model = TrademarkProfile
         fields = '__all__'
-#         depth = 1
-#
-# class TrademarkAction1_serializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = TrademarkAction1
-#         fields = '__all__'
+        depth = 1
 
 
-# class TrademarkAction2_serializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = TrademarkAction2
-#         fields = '__all__'
-#
+class AmendementAction_serializer(serializers.ModelSerializer):
+    model = AmendementAction
+    fields = '__all__'
