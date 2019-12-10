@@ -27,3 +27,8 @@ class CertificateProcurementAction_serializer(serializers.ModelSerializer):
 class ChangeName_AddressAction_serializer(serializers.ModelSerializer):
     model = ChangeName_AddressAction
     fields = '__all__'
+
+
+class ReclassificationAction_serializer(serializers.ModelSerializer):
+    model = ReclassificationAction
+    fields = '__all__'
