@@ -32,3 +32,18 @@ class ChangeName_AddressAction_serializer(serializers.ModelSerializer):
 class ReclassificationAction_serializer(serializers.ModelSerializer):
     model = ReclassificationAction
     fields = '__all__'
+
+
+class RegistrationAction_serializer(serializers.ModelSerializer):
+    model = RegistrationAction
+    fields = '__all__'
+
+
+class RenewalAction_serializer(serializers.ModelSerializer):
+    model = RenewalAction
+    fields = '__all__'
+
+
+class SearchAction(serializers.ModelSerializer):
+    model = SearchAction
+    fields = '__all__'
