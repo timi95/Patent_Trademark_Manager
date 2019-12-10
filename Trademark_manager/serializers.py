@@ -22,3 +22,8 @@ class AssignmentMergerAction_serializer(serializers.ModelSerializer):
 class CertificateProcurementAction_serializer(serializers.ModelSerializer):
     model = CertificateProcurementAction
     fields = '__all__'
+
+
+class ChangeName_AddressAction_serializer(serializers.ModelSerializer):
+    model = ChangeName_AddressAction
+    fields = '__all__'
