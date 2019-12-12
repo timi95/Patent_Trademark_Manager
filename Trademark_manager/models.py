@@ -125,7 +125,7 @@ class SearchAction(models.Model):
 class TrademarkProfile(models.Model):
     client_name = models.CharField(default="default client name", max_length=50)
     client_ref_no = models.CharField(default="default value", max_length=50)
-    correspondence_date = models.CharField(default="default value", max_length=50)
+    correspondence_date = models.DateField(auto_now=False, auto_now_add=False)
     current_instruction = models.CharField(default="default value", max_length=50)
     current_status = models.CharField(default="default value", max_length=50)
     date_instruction_received = models.DateTimeField(auto_now_add=True, blank=True)
