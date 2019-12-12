@@ -128,7 +128,7 @@ class TrademarkProfile(models.Model):
     correspondence_date = models.DateField(auto_now=False, auto_now_add=False)
     current_instruction = models.CharField(default="default value", max_length=50)
     current_status = models.CharField(default="default value", max_length=50)
-    date_instruction_received = models.DateTimeField(auto_now_add=True, blank=True)
+    date_instruction_received = models.DateField(auto_now=False, auto_now_add=False)
     date_current_instruction = models.CharField(default="default value", max_length=50)
     date_completed_job_received = models.CharField(default="default value", max_length=50)
     date_incoming_abj_schedule = models.CharField(default="default value", max_length=50)

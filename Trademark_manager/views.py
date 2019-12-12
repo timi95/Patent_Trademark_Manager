@@ -10,6 +10,8 @@ class TrademarkProfile_view(generics.ListCreateAPIView,
                             generics.RetrieveUpdateDestroyAPIView):
     queryset = TrademarkProfile.objects.all()
     serializer_class = TrademarkProfile_serializer
+    # def dispatch(self, request, args, kwargs):
+    #
 
 
 class AmendementAction_view(generics.ListCreateAPIView,
