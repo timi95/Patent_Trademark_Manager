@@ -83,7 +83,7 @@ class RegistrationAction(models.Model):
     date_sent_for_publication = models.DateField()
     date_abj_instructed_for_registration = models.DateField()
     goods = models.CharField(default="default value", max_length=50)
-    journal_date = models.CharField(default="default value", max_length=50)
+    journal_date = models.DateField()
     journal_no = models.CharField(default="default value", max_length=50)
     journal_page = models.CharField(default="default value", max_length=50)
     journal_vol = models.CharField(default="default value", max_length=50)
@@ -93,7 +93,7 @@ class RegistrationAction(models.Model):
     registration_filing_month = models.CharField(default="default value", max_length=50)
     registration_no = models.CharField(default="default value", max_length=50)
     registraion_cert_facilitation_sent = models.CharField(default="default value", max_length=50)
-    tm_registration_filing_date = models.CharField(default="default value", max_length=50)
+    tm_registration_filing_date = models.DateField()
 
 
 class RenewalAction(models.Model):
