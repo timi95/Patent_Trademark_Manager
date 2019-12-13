@@ -147,7 +147,7 @@ class TrademarkProfile(models.Model):
     official_fee_registered_user = models.CharField(default="default value", max_length=50)
     our_ref_no = models.CharField(default="default value", max_length=50)
     proprietors_address = models.CharField(default="default value", max_length=50)
-    quicktellers_fee = models.CharField(default="default value", max_length=50)
+    quicktellers_fee = models.DecimalField()
     registration_no = models.IntegerField()
     trademark_description = models.CharField(default="default value", max_length=50)
 
