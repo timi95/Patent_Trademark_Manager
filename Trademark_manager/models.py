@@ -72,7 +72,7 @@ class RegistrationAction(models.Model):
     acknowledgement_date = models.CharField(default="default value", max_length=50)
     acknowledgement_facilitation_sent = models.CharField(default="default value", max_length=50)
     application_no = models.CharField(default="default value", max_length=50)
-    trademark_class = models.CharField(default="default value", max_length=50)
+    trademark_class = models.IntegerField()
     clerk_registering = models.CharField(default="default value", max_length=50)
     colour_limitation = models.CharField(default="default value", max_length=50)
     date_acceptance_facilitation_sent = models.CharField(default="default value", max_length=50)
