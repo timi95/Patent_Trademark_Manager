@@ -125,9 +125,9 @@ class SearchAction(models.Model):
 class TrademarkProfile(models.Model):
     client_name = models.CharField(default="default client name", max_length=50)
     client_ref_no = models.CharField(default="default value", max_length=50)
-    correspondence_date = models.DateField(auto_now=False, auto_now_add=False)
     current_instruction = models.CharField(default="default value", max_length=50)
     current_status = models.CharField(default="default value", max_length=50)
+    correspondence_date = models.DateField(auto_now=False, auto_now_add=False)
     date_instruction_received = models.DateField(auto_now=False, auto_now_add=False)
     date_current_instruction = models.DateField(auto_now=False, auto_now_add=False)
     date_completed_job_received = models.DateField(auto_now=False, auto_now_add=False)
@@ -148,7 +148,7 @@ class TrademarkProfile(models.Model):
     our_ref_no = models.CharField(default="default value", max_length=50)
     proprietors_address = models.CharField(default="default value", max_length=50)
     quicktellers_fee = models.CharField(default="default value", max_length=50)
-    registration_no = models.CharField(default="default value", max_length=50)
+    registration_no = models.IntegerField()
     trademark_description = models.CharField(default="default value", max_length=50)
 
     search_action = models.ForeignKey(SearchAction, on_delete=models.CASCADE, null=True)
