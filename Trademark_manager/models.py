@@ -6,43 +6,43 @@ from django.db import models
 
 
 class AmendementAction(models.Model):
-    ammendement_instruction_date = models.CharField(default="default value", max_length=50)
-    date_ammendement_instruction_received = models.CharField(default="default value", max_length=50)
+    ammendement_instruction_date = models.DateField()
+    date_ammendement_instruction_received = models.DateField()
     nature_of_amendement = models.CharField(default="default value", max_length=50)
-    date_amending_clerk_instructed = models.CharField(default="default value", max_length=50)
+    date_amending_clerk_instructed = models.DateField()
     status_of_amendement = models.CharField(default="default value", max_length=50)
-    date_amendement_received = models.CharField(default="default value", max_length=50)
+    date_amendement_received = models.DateField()
 
 
 class AssignmentMergerAction(models.Model):
-    assignment_instruction_date = models.CharField(default="default value", max_length=50)
+    assignment_instruction_date = models.DateField()
     assignment_instruction_month = models.CharField(default="default value", max_length=50)
     assignee = models.CharField(default="default value", max_length=50)
     assignee_address = models.CharField(default="default value", max_length=50)
     assignor = models.CharField(default="default value", max_length=50)
     assignor_address = models.CharField(default="default value", max_length=50)
     clerk_assigning = models.CharField(default="default value", max_length=50)
-    date_abj_instructed_assignment = models.CharField(default="default value", max_length=50)
-    date_assignment_certificate_received = models.CharField(default="default value", max_length=50)
-    date_facillitation_assignment_cert_sent = models.CharField(default="default value", max_length=50)
-    date_facillitation_assignment_cert_sent_sent = models.CharField(default="default value", max_length=50)
+    date_abj_instructed_assignment = models.DateField()
+    date_assignment_certificate_received = models.DateField()
+    date_facillitation_assignment_cert_sent = models.DateField()
+    date_facillitation_assignment_cert_sent_sent = models.DateField()
     official_fee_assignment = models.CharField(default="default value", max_length=50)
     status_assignment_registration = models.CharField(default="default value", max_length=50)
 
 
 class CertificateProcurementAction(models.Model):
-    date_procurement_instructed = models.CharField(default="default value", max_length=50)
+    date_procurement_instructed = models.DateField()
     application_no = models.CharField(default="default value", max_length=50)
     trademark_description = models.CharField(default="default value", max_length=50)
-    journal_no = models.CharField(default="default value", max_length=50)
-    journal_vol = models.CharField(default="default value", max_length=50)
-    journal_date = models.CharField(default="default value", max_length=50)
+    journal_no = models.IntegerField()
+    journal_vol = models.IntegerField()
+    journal_date = models.DateField()
     journal_page = models.CharField(default="default value", max_length=50)
-    date_clerk_instructed_to_procure = models.CharField(default="default value", max_length=50)
+    date_clerk_instructed_to_procure = models.DateField()
     cert_procurement_status = models.CharField(default="default value", max_length=50)
-    date_registration_certificate = models.CharField(default="default value", max_length=50)
-    registration_no = models.CharField(default="default value", max_length=50)
-    official_fee_certificate_issuance = models.CharField(default="default value", max_length=50)
+    date_registration_certificate = models.DateField()
+    registration_no = models.IntegerField()
+    official_fee_certificate_issuance = models.DecimalField()
 
 
 class ChangeName_AddressAction(models.Model):
