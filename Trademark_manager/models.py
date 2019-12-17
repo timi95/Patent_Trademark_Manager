@@ -42,7 +42,7 @@ class CertificateProcurementAction(models.Model):
     cert_procurement_status = models.CharField(default="default value", max_length=50)
     date_registration_certificate = models.DateField()
     registration_no = models.IntegerField()
-    official_fee_certificate_issuance = models.DecimalField()
+    official_fee_certificate_issuance = models.DecimalField(max_digits=12, decimal_places=2, blank=True, null=True)
 
 
 class ChangeName_AddressAction(models.Model):
@@ -52,8 +52,8 @@ class ChangeName_AddressAction(models.Model):
     date_received_change_of_name_certificate = models.DateField()
     new_address_of_pptr = models.CharField(default="default value", max_length=50)
     new_name_of_pptr = models.CharField(default="default value", max_length=50)
-    official_fee_change_name = models.DecimalField()
-    official_fee_change_address = models.DecimalField()
+    official_fee_change_name = models.DecimalField(max_digits=12, decimal_places=2, blank=True, null=True)
+    official_fee_change_address = models.DecimalField(max_digits=12, decimal_places=2, blank=True, null=True)
     status_change_of_name = models.CharField(default="default value", max_length=50)
     status_change_of_address = models.CharField(default="default value", max_length=50)
 
@@ -123,8 +123,8 @@ class SearchAction(models.Model):
     search_type =  models.CharField(default="default value", max_length=50)
 
 class TrademarkProfile(models.Model):
-    applicable_official_fee = models.DecimalField()
-    applicable_service_charge = models.DecimalField()
+    applicable_official_fee = models.DecimalField(max_digits=12, decimal_places=2, blank=True, null=True)
+    applicable_service_charge = models.DecimalField(max_digits=12, decimal_places=2, blank=True, null=True)
     trademark_class = models.IntegerField()
     clerk_responsible = models.CharField(default="default value", max_length=50)
     clients_email_address = models.CharField(default="default value", max_length=50)
@@ -154,7 +154,7 @@ class TrademarkProfile(models.Model):
     official_fee_registered_user = models.CharField(default="default value", max_length=50)
     our_ref_no = models.CharField(default="default value", max_length=50)
     proprietors_address = models.CharField(default="default value", max_length=50)
-    quicktellers_fee = models.DecimalField()
+    quicktellers_fee = models.DecimalField(max_digits=12, decimal_places=2, blank=True, null=True)
     registration_no = models.IntegerField()
     trademark_description = models.CharField(default="default value", max_length=50)
 
