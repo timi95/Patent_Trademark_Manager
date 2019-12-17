@@ -4,7 +4,7 @@ from django.db import models
 
 # Create your models here.
 
-# 
+#
 class AmendementAction(models.Model):
     ammendement_instruction_date = models.DateField()
     date_ammendement_instruction_received = models.DateField()
@@ -46,23 +46,23 @@ class CertificateProcurementAction(models.Model):
 
 
 class ChangeName_AddressAction(models.Model):
-    change_of_address_instruction_date = models.CharField(default="default value", max_length=50)
+    change_of_address_instruction_date = models.DateField()
     change_of_name_instruction_date = models.CharField(default="default value", max_length=50)
-    date_received_change_of_address_certificate = models.CharField(default="default value", max_length=50)
-    date_received_change_of_name_certificate = models.CharField(default="default value", max_length=50)
+    date_received_change_of_address_certificate = models.DateField()
+    date_received_change_of_name_certificate = models.DateField()
     new_address_of_pptr = models.CharField(default="default value", max_length=50)
     new_name_of_pptr = models.CharField(default="default value", max_length=50)
-    official_fee_change_name = models.CharField(default="default value", max_length=50)
-    official_fee_change_address = models.CharField(default="default value", max_length=50)
+    official_fee_change_name = models.DecimalField()
+    official_fee_change_address = models.DecimalField()
     status_change_of_name = models.CharField(default="default value", max_length=50)
     status_change_of_address = models.CharField(default="default value", max_length=50)
 
 
 class ReclassificationAction(models.Model):
-    date_reclassification_instruction = models.CharField(default="default value", max_length=50)
-    date_abj_instructed_reclassify = models.CharField(default="default value", max_length=50)
+    date_reclassification_instruction = models.DateField()
+    date_abj_instructed_reclassify = models.DateField()
     reclassification_status = models.CharField(default="default value", max_length=50)
-    date_publication_of_reclassification = models.CharField(default="default value", max_length=50)
+    date_publication_of_reclassification = models.DateField()
     journal_pg_reclassification = models.CharField(default="default value", max_length=50)
 
 
