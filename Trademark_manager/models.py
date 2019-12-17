@@ -161,4 +161,8 @@ class TrademarkProfile(models.Model):
     search_action = models.ForeignKey(SearchAction, on_delete=models.CASCADE, null=True)
     renewal_action = models.ForeignKey(RenewalAction, on_delete=models.CASCADE, null=True)
     registration_action = models.ForeignKey(RegistrationAction, on_delete=models.CASCADE, null=True)
+    reclassification_action = models.ForeignKey(ReclassificationAction, on_delete=models.CASCADE, null=True)
+    change_name_address_action = models.ForeignKey(ChangeName_AddressAction, on_delete=models.CASCADE, null=True)
     certificate_procurement_action = models.ForeignKey(CertificateProcurementAction, on_delete=models.CASCADE, null=True)
+    assignment_merger_action = models.ForeignKey(AssignmentMergerAction, on_delete=models.CASCADE, null=True)
+    ammendement_action = models.ForeignKey(AmendementAction, on_delete=models.CASCADE, null=True)
