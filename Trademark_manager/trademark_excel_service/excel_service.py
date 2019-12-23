@@ -6,7 +6,7 @@ print("This is the excel service")
 # os.chdir('/home/psykinetic/workspace/Python_and_Django/Patent_Trademark_Manager/Trademark_manager/trademark_excel_service')
 wb = openpyxl.load_workbook('Instruction particulars.xlsx')
 
-print(wb.get_sheet_names() )
+print(wb.get_sheet_names())
 sheet = wb.get_sheet_by_name('Sheet1')
 
 for i in range(1,10) :
@@ -26,3 +26,4 @@ for i in range(1,10) :
 #
 # print("Column headings:")
 # print(df.columns)
+# 
