@@ -23,5 +23,11 @@ filename = 'Instruction_particulars.xlsx'
 
 df = pd.read_excel(filename, 'Sheet1')
 
-print("Column headings:")
-print(df.columns)
+# print("Column headings:")
+# print(df.columns)
+
+print("As if nested loops in python are a good fucking idea...")
+for i in df.columns:
+    print(df.columns[i])
+    for j in df.index:
+        print(df[i][j])
