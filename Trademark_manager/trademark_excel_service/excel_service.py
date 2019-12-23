@@ -19,10 +19,9 @@ import pandas as pd
 from pandas import ExcelWriter
 from pandas import ExcelFile
 
-filename = ''
-sheet_name = ''
+filename = 'Instruction_particulars.xlsx'
 
-df = pd.read_excel(filename, sheetname= sheet_name)
+df = pd.read_excel(filename, 'Sheet1')
 
 print("Column headings:")
 print(df.columns)
