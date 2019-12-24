@@ -114,11 +114,11 @@ class RenewalAction(models.Model):
 class SearchAction(models.Model):
     clerk_searching = models.CharField(default="default value", max_length=50)
     conflicting_mark = models.CharField(default="default value", max_length=50)
-    date_of_search_report = models.CharField(default="default value", max_length=50)
+    date_of_search_report = models.DateField()
     date_reported_to_client = models.CharField(default="default value", max_length=50)
-    official_search_fee = models.CharField(default="default value", max_length=50)
+    official_search_fee = models.DecimalField(max_digits=12, decimal_places=2, blank=True, null=True)
     reported_to_client = models.CharField(default="default value", max_length=50)
-    search_instruction_date = models.CharField(default="default value", max_length=50)
+    search_instruction_date = models.DateField()
     search_status = models.CharField(default="default value", max_length=50)
     search_type =  models.CharField(default="default value", max_length=50)
 
