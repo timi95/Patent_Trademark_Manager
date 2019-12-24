@@ -15,6 +15,7 @@
 
 # Create objects and populate with excel data
 
+from .models import TrademarkProfile
 import pandas as pd
 from pandas import ExcelWriter
 from pandas import ExcelFile
