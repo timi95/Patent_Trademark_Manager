@@ -15,12 +15,12 @@
 
 # Create objects and populate with excel data
 
-from .models import TrademarkProfile
+from .models import SearchAction
 import pandas as pd
 from pandas import ExcelWriter
 from pandas import ExcelFile
 
-filename = 'Instruction_particulars.xlsx'
+filename = 'Search.xlsx'
 
 df = pd.read_excel(filename, 'Sheet1')
 
