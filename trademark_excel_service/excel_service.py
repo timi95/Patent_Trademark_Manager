@@ -52,6 +52,7 @@ mySearchAction = SearchAction()
 # print(df.columns)
 
 print("As if nested loops in python are a good fucking idea...")
+# going by rows first
 for i in df.rows:
     print(df.rows[i])
 # for i in df.columns:
