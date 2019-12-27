@@ -15,7 +15,6 @@
 
 # Create objects and populate with excel data
 
-from Trademark_manager.models import SearchAction
 import pandas as pd
 from pandas import ExcelWriter
 from pandas import ExcelFile
