@@ -14,7 +14,6 @@
 # Read from excel sheet
 
 # Create objects and populate with excel data
-from .models import SearchAction
 import pandas as pd
 from pandas import ExcelWriter
 from pandas import ExcelFile
@@ -23,9 +22,28 @@ from pandas import ExcelFile
 def HelloService():
     print("HelloService")
 
-filename = '/home/psykinetic/workspace/Python_and_Django/Patent_Trademark_Manager/Trademark_manager/Trademark_excel_assets/Search.xlsx'
+filename = '/home/psykinetic/workspace/Python_and_Django/Patent_Trademark_Manager/Trademark_excel_assets/Search.xlsx'
 
 df = pd.read_excel(filename, 'Sheet1')
+
+
+
+# print("Column headings:")
+# print(df.columns)
+
+print("As if nested loops in python are a good fucking idea...")
+# going by rows first
+# for i in df.rows:
+#     print(df.rows[i])
+# for i in df.columns:
+#     mySearchAction.
+#     print(df.columns[i])
+#     for j in df.index:
+#         print(df[i][j])
+
+
+
+
 
     # clerk_searching,
     # conflicting_mark,
@@ -49,17 +67,3 @@ df = pd.read_excel(filename, 'Sheet1')
     # search_type =  models.CharField(default="default value", max_length=50)
     #
     #
-mySearchAction = SearchAction()
-
-# print("Column headings:")
-# print(df.columns)
-
-print("As if nested loops in python are a good fucking idea...")
-# going by rows first
-# for i in df.rows:
-#     print(df.rows[i])
-# for i in df.columns:
-#     mySearchAction.
-#     print(df.columns[i])
-#     for j in df.index:
-#         print(df[i][j])
