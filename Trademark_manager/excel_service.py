@@ -19,7 +19,11 @@ import pandas as pd
 from pandas import ExcelWriter
 from pandas import ExcelFile
 
-filename = 'Search.xlsx'
+
+def HelloService():
+    print("HelloService")
+
+filename = '/home/psykinetic/workspace/Python_and_Django/Patent_Trademark_Manager/Trademark_manager/Trademark_excel_assets/Search.xlsx'
 
 df = pd.read_excel(filename, 'Sheet1')
 
@@ -52,8 +56,8 @@ mySearchAction = SearchAction()
 
 print("As if nested loops in python are a good fucking idea...")
 # going by rows first
-for i in df.rows:
-    print(df.rows[i])
+# for i in df.rows:
+#     print(df.rows[i])
 # for i in df.columns:
 #     mySearchAction.
 #     print(df.columns[i])
