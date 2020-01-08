@@ -18,18 +18,23 @@ import pandas as pd
 from pandas import ExcelWriter
 from pandas import ExcelFile
 
+# Just some thoughts...
+# maybe I can iterate through class properties of the trademark models
+#  this way I will have a non-tedious way of directly linking model attributes with data from their corresponding excel sheets
+
 
 def HelloService():
+    filename = '/home/psykinetic/workspace/Python_and_Django/Patent_Trademark_Manager/Trademark_excel_assets/Search.xlsx'
     print("HelloService")
-
-filename = '/home/psykinetic/workspace/Python_and_Django/Patent_Trademark_Manager/Trademark_excel_assets/Search.xlsx'
-
-df = pd.read_excel(filename, 'Sheet1')
-
+    print("Column headings:")
+    df = pd.read_excel(filename, 'Sheet1')
+    print(df.columns[0:3])
 
 
-# print("Column headings:")
-# print(df.columns)
+
+
+
+
 
 print("As if nested loops in python are a good fucking idea...")
 # going by rows first
