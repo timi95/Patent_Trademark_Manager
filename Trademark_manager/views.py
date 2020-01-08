@@ -3,7 +3,7 @@ from django.http import FileResponse, HttpResponse, Http404
 from rest_framework import generics, filters, pagination
 from .models import *
 from .serializers import *
-from .excel_service import *
+from Trademark_excel_assets.excel_service import *
 
 
 # Create your views here.
