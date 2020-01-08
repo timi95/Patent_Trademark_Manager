@@ -57,4 +57,4 @@ class SearchAction_view(generics.ListCreateAPIView,
     serializer_class = SearchAction_serializer
 
 
-HelloService()
+HelloService(SearchAction)
