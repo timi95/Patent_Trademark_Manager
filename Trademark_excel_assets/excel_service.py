@@ -14,21 +14,25 @@
 # Read from excel sheet
 
 # Create objects and populate with excel data
+import inspect
 import pandas as pd
 from pandas import ExcelWriter
 from pandas import ExcelFile
 
-# Just some thoughts...
-# maybe I can iterate through class properties of the trademark models
-#  this way I will have a non-tedious way of directly linking model attributes with data from their corresponding excel sheets
+# Actually listing the class properties is possible but it must be a method internal to the models class
+# This is because the properties of the inherited models come in the list
 
 
-def HelloService():
+def HelloService(obj):
+    property_list = [i for i in dir(obj) if not inspect.ismethod(i) or ]#[a for a in dir(obj) if not a.startswith('__')]
+    # [print(f"attribute: {k}    value: {v}") for k, v in obj.__dict__.items()]
+    # print("This is the propety list", property_list)
     filename = '/home/psykinetic/workspace/Python_and_Django/Patent_Trademark_Manager/Trademark_excel_assets/Search.xlsx'
     print("HelloService")
     print("Column headings:")
     df = pd.read_excel(filename, 'Sheet1')
-    print(df.columns[0:3])
+    print("PROPERTIES ",property_list)
+    print(df.columns[0:property_list.__len__()])
 
 
 
