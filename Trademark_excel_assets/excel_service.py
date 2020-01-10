@@ -24,7 +24,8 @@ from pandas import ExcelFile
 
 
 def HelloService(obj):
-    property_list = [i for i in dir(obj) if not inspect.ismethod(i) or ]#
+    obj.countProperties(obj)
+    property_list = [i for i in dir(obj) if not inspect.ismethod(i) ]
     # [print(f"attribute: {k}    value: {v}") for k, v in obj.__dict__.items()]
     # print("This is the propety list", property_list)
     filename = '/home/psykinetic/workspace/Python_and_Django/Patent_Trademark_Manager/Trademark_excel_assets/Search.xlsx'
