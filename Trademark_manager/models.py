@@ -121,8 +121,6 @@ class SearchAction(models.Model):
     search_instruction_date = models.DateField()
     search_status = models.CharField(default="default value", max_length=50)
     search_type =  models.CharField(default="default value", max_length=50)
-    def countProperties(self):
-        print("Self Object!",self)
 
 class TrademarkProfile(models.Model):
     applicable_official_fee = models.DecimalField(max_digits=12, decimal_places=2, blank=True, null=True)
