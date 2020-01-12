@@ -30,8 +30,8 @@ def HelloService(obj):
     print("HelloService")
     print("Column headings:")
     df = pd.read_excel(filename, 'Sheet1')
-    print("PROPERTIES ",property_list)
-    print(df.columns[0:property_list.__len__()])
+    print("PROPERTIES ",property_list, " length: ",property_list.__len__()," \n")
+    print("COLUMNS ",df.columns[0:property_list.__len__()], " length: ", df.columns.__len__(), " \n")
 
 
 
