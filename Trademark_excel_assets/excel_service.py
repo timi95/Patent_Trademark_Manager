@@ -31,7 +31,12 @@ def HelloService(obj):
     print("Column headings:")
     df = pd.read_excel(filename, 'Sheet1')
     print("PROPERTIES ",property_list, " length: ",property_list.__len__()," \n")
-    print("COLUMNS ",df.columns[0:property_list.__len__()], " length: ", df.columns.__len__(), " \n")
+    print("COLUMNS ",df.columns[0:property_list.__len__()],
+    " length: ", df.columns.__len__(), " \n")
+    for i in df.columns:
+        for j in df.rows:
+            
+
 
 
 
