@@ -33,8 +33,14 @@ def HelloService(obj):
     print("PROPERTIES ",property_list, " length: ",property_list.__len__()," \n")
     print("COLUMNS ",df.columns[0:property_list.__len__()],
     " length: ", df.columns.__len__(), " \n")
-    # for i in df.columns:
-    #     for j in df.rows:
+    count = 0
+    for i in df.index:
+        count+=1
+        # print("I think these are rows -->",df.index[i])
+        for j in df.columns:
+            print("I think these are rows -->",df.index[i])
+            # print("I think these are columns -->",df.columns)
+    print("finished counting -->", count)
 
 
 
