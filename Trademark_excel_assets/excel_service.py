@@ -38,7 +38,6 @@ def HelloService(obj):
         count+=1
         # print("I think these are rows -->",df.index[i])
         for j in df.columns:
-            print("I think these are rows -->",df.index[i])
             # print("I think these are columns -->",df.columns)
     print("finished counting -->", count)
 
