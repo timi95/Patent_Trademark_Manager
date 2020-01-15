@@ -19,8 +19,6 @@ import pandas as pd
 from pandas import ExcelWriter
 from pandas import ExcelFile
 
-# Actually listing the class properties is possible but it must be a method internal to the models class
-# This is because the properties of the inherited models come in the list
 
 # postponing the upload feature in favour of making the app functional first
 
