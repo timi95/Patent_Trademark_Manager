@@ -57,4 +57,6 @@ class SearchAction_view(generics.ListCreateAPIView,
     serializer_class = SearchAction_serializer
 
 
+# testing the data wrangling service
+# which will become the import feature from excel files
 HelloService(SearchAction)

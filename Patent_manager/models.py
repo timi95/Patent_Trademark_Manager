@@ -1,5 +1,5 @@
 from django.db import models
 
 # Create your models here.
-class PatentProfile(models.Model):
+class PatentParticulars(models.Model):
     pass
