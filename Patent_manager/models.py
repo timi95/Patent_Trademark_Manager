@@ -10,3 +10,6 @@ class SearchAction(models.Model):
     date_reported_to_client = models.DateField()
     clerk_searching = models.CharField(default="default value", max_length=)
     pass
+
+class classname(object):
+    pass
