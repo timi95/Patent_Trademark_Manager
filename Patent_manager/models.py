@@ -34,3 +34,9 @@ class ChangeOfAddressAction(models.Model):
 
 class AssignmentMergerAction(object):
     pass
+
+class AmendmentAction(models.Model):
+    pass
+
+class PatentParticlars(models.Model):
+    pass
