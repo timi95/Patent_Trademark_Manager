@@ -17,3 +17,12 @@ class RenewalAction(models.Model):
     patent_start_date = models.DateField()
     pass
 
+class Registration(models.Model):
+    pass
+
+class ProcurementOfCertificate(models.Model):
+    pass
+
+class CTC(models.Model):
+    pass
+
