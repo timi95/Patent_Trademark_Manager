@@ -11,5 +11,9 @@ class SearchAction(models.Model):
     clerk_searching = models.CharField(default="default value", max_length=)
     pass
 
-class classname(object):
+class RenewalAction(models.Model):
+    patent_registration_no = models.CharField(default="default value", max_length=50)
+    invention_description = models.CharField(default="default value", max_length=50)
+    patent_start_date = models.DateField()
     pass
+
