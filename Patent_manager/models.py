@@ -33,6 +33,7 @@ class RenewalAction(models.Model):
     pass
 
 class RegistrationAction(models.Model):
+    date_registration_instruction_received = modesl.DateField()
     pass
 
 class ProcurementOfCertificateAction(models.Model):
