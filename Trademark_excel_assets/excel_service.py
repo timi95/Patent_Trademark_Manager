@@ -93,32 +93,32 @@ from xlrd import open_workbook
 
 def HelloService(obj):
     print("HELLO SERVICE ACTIVATING")
-    filepath = '/home/psykinetic/workspace/Python_and_Django/Patent_Trademark_Manager/Trademark_excel_assets/Search.xlsx'
-    wb = open_workbook(filepath)
-    for sheet in wb.sheets():
-        number_of_rows = sheet.nrows
-        number_of_columns = sheet.ncols
-        items = []
+#     filepath = '/home/psykinetic/workspace/Python_and_Django/Patent_Trademark_Manager/Trademark_excel_assets/Search.xlsx'
+#     wb = open_workbook(filepath)
+#     for sheet in wb.sheets():
+#         number_of_rows = sheet.nrows
+#         number_of_columns = sheet.ncols
+#         items = []
 
-        rows = []
-        for row in range(1, number_of_rows):
-            values = []
-            for col in range(number_of_columns):
-                value  = (sheet.cell(row,col).value)
-                try:
-                    value = str(int(value))
-                except ValueError:
-                    pass
-                finally:
-                    values.append(value)
-            item = Arm(*values)
-            items.append(item)
+#         rows = []
+#         for row in range(1, number_of_rows):
+#             values = []
+#             for col in range(number_of_columns):
+#                 value  = (sheet.cell(row,col).value)
+#                 try:
+#                     value = str(int(value))
+#                 except ValueError:
+#                     pass
+#                 finally:
+#                     values.append(value)
+#             item = Arm(*values)
+#             items.append(item)
 
-    for item in items:
-        print(item)
-        print("Accessing one single value (eg. DSPName): {0}".format(item.dsp_name))
-        print
-    # with open(filepath, newline='') as csvfile:
-    #     reader = csv.DictReader(csvfile)
-    #     for row in reader:
-    #         print(row)
+#     for item in items:
+#         print(item)
+#         print("Accessing one single value (eg. DSPName): {0}".format(item.dsp_name))
+#         print
+#     # with open(filepath, newline='') as csvfile:
+#     #     reader = csv.DictReader(csvfile)
+#     #     for row in reader:
+#     #         print(row)
