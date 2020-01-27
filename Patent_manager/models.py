@@ -35,6 +35,8 @@ class RenewalAction(models.Model):
 class RegistrationAction(models.Model):
     date_registration_instruction_received = models.DateField()
     month_registration_instruction_received = models.DateField()
+    clerk_registration = models.CharField(default="default value", max_length=50)
+    date_abuja_instructed_for_registration = models.DateField()
     pass
 
 class ProcurementOfCertificateAction(models.Model):
