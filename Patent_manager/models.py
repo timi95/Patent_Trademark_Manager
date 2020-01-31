@@ -62,6 +62,7 @@ class RegistrationAction(models.Model):
     pass
 
 class ProcurementOfCertificateAction(models.Model):
+    date_procurement_instructed = models.DateField()
     pass
 
 class CTCAction(models.Model):
