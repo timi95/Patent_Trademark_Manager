@@ -66,6 +66,7 @@ class ProcurementOfCertificateAction(models.Model):
     application_no = models.CharField(default="default value", max_length=50)
     invention_description = models.CharField(default="default value", max_length=50)
     clerk_procuring = models.CharField(default="default value", max_length=50)
+    date_procurement_instructed = models.CharField(default="default value", max_length=50)
     pass
 
 class CTCAction(models.Model):
