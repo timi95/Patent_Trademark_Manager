@@ -67,6 +67,12 @@ class ProcurementOfCertificateAction(models.Model):
     invention_description = models.CharField(default="default value", max_length=50)
     clerk_procuring = models.CharField(default="default value", max_length=50)
     date_procurement_instructed = models.CharField(default="default value", max_length=50)
+    month_clerk_instructed = models.CharField(default="default value", max_length=50)
+    procurement_status = models.CharField(default="default value", max_length=50)
+    date_cert_procured = models.CharField(default="default value", max_length=50)
+    patent_regtn_no = models.CharField(default="default value", max_length=50)
+    date_cert_procurement_due = models.CharField(default="default value", max_length=50)
+    month_cert_procurement_due = models.CharField(default="default value", max_length=50)
     pass
 
 class CTCAction(models.Model):
