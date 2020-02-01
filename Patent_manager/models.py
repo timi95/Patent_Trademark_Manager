@@ -76,6 +76,7 @@ class ProcurementOfCertificateAction(models.Model):
     pass
 
 class CTCAction(models.Model):
+    
     pass
 
 class ChangeOfNameAction(models.Model):
