@@ -85,7 +85,12 @@ class CTCAction(models.Model):
     pass
 
 class ChangeOfNameAction(models.Model):
-    
+    change_of_name_instruction_date = models.DateField()
+    change_of_name_instruction_month = models.CharField(default="default value", max_length=50)
+    new_name_of_patentee = models.CharField(default="default value", max_length=50)
+    clerk_for_change_of_name = models.CharField(default="default value", max_length=50)
+    status_of_change_of_name = models.CharField(default="default value", max_length=50)
+    date_received_change_of_name_certificate  = models.DateField()
     pass
 
 class ChangeOfAddressAction(models.Model):
