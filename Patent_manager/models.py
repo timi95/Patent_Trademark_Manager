@@ -103,10 +103,25 @@ class ChangeOfAddressAction(models.Model):
     pass
 
 class AssignmentMergerAction(object):
-    
+    assignment_instruction_date = models.DateField()
+    assignment_instruction_month = models.CharField(default="default value", max_length=50)
+    date_abuja_instructed_assignment = models.CharField(default="default value", max_length=50)
+    clerk_assignment = models.CharField(default="default value", max_length=50)
+    status_assignment_registrations = models.CharField(default="default value", max_length=50)
+    assignor = models.CharField(default="default value", max_length=50)
+    assignor_address = models.CharField(default="default value", max_length=50)
+    assignee = models.CharField(default="default value", max_length=50)
+    assignee_address = models.CharField(default="default value", max_length=50)
+    date_assignment_certificate_received = models.CharField(default="default value", max_length=50)
     pass
 
 class AmendmentAction(models.Model):
+    date_ammendment_instruction_received = models.DateField()
+    nature_of_amendment = models.CharField(default="default value", max_length=50)
+    amending_clerk = models.CharField(default="default value", max_length=50)
+    date_amending_clerk_instructed = models.CharField(default="default value", max_length=50)
+    status_of_amendment = models.CharField(default="default value", max_length=50)
+    date_amendment_received = models.DateField()
     pass
 
 class PatentParticlars(models.Model):
