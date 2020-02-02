@@ -94,9 +94,16 @@ class ChangeOfNameAction(models.Model):
     pass
 
 class ChangeOfAddressAction(models.Model):
+    change_of_address_instruction_date = models.DateField()
+    change_of_address_instruction_month = models.CharField(default="default value", max_length=50)
+    new_address_of_patentee = models.CharField(default="default value", max_length=50)
+    clerk_of_change_of_address = models.CharField(default="default value", max_length=50)
+    status_change_of_address = models.CharField(default="default value", max_length=50)
+    date_received_change_of_address_certificate = models.CharField(default="default value", max_length=50)
     pass
 
 class AssignmentMergerAction(object):
+    
     pass
 
 class AmendmentAction(models.Model):
