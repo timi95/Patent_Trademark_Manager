@@ -76,10 +76,16 @@ class ProcurementOfCertificateAction(models.Model):
     pass
 
 class CTCAction(models.Model):
-    
+    application_no = models.CharField(default="default value", max_length=50)
+    patent_registration_no = models.CharField(default="default value", max_length=50)
+    ctc_required = models.CharField(default="default value", max_length=50)
+    date_applied_for_ctc = models.CharField(default="default value", max_length=50)
+    ctc_procurement_status = models.CharField(default="default value", max_length=50)
+    clerk_responsible = models.CharField(default="default value", max_length=50)
     pass
 
 class ChangeOfNameAction(models.Model):
+    
     pass
 
 class ChangeOfAddressAction(models.Model):
