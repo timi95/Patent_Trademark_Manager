@@ -156,3 +156,4 @@ class PatentParticlars(models.Model):
     applicable_service_charge = models.DecimalField(max_digits=12, decimal_places=2, blank=True, null=True)
     quickteller_fee = models.DecimalField(max_digits=12, decimal_places=2, blank=True, null=True)
     pass
+#
