@@ -26,9 +26,17 @@ class AssignmentMergerAction_serializer(serializers.ModelSerializer):
 
 class ChangeOfAddress_serializer(serializers.ModelSerializer):
     class Meta:
-        
-        pass
-    pass
+        model = ChangeOfAddressAction
+        fields = '__all__'
+
+
+class ChangeOfName_serializer(serializers.ModelSerializer):
+    class Meta:
+        models = ChangeOfNameAction
+        fields = '__all__'
+
+
+
 
 
 
