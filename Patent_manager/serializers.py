@@ -36,7 +36,14 @@ class ChangeOfName_serializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
+class CTC_serializers(serializers.ModelSerializer):
+    class Meta:
+        models = CTCAction
+        fields = '__all__'
 
+
+class classname(object):
+    pass
 
 
 
