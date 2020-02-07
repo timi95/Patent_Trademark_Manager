@@ -48,6 +48,11 @@ class ProcurementOfCertification_serializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
+class Registration_serializer(serializers.ModelSerializer):
+    class Meta:
+        models = RegistrationAction
+        fields = '__all__'
+
 
 
 
