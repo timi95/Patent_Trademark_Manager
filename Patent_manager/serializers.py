@@ -36,14 +36,19 @@ class ChangeOfName_serializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
-class CTC_serializers(serializers.ModelSerializer):
+class CTC_serializer(serializers.ModelSerializer):
     class Meta:
         models = CTCAction
         fields = '__all__'
 
 
-class classname(object):
-    pass
+class ProcurementOfCertification_serializer(serializers.ModelSerializer):
+    class Meta:
+        models = ProcurementOfCertification
+        fields = '__all__'
+
+
+
 
 
 
