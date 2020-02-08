@@ -53,6 +53,8 @@ class Registration_serializer(serializers.ModelSerializer):
         models = RegistrationAction
         fields = '__all__'
 
+        
+
 
 
 
