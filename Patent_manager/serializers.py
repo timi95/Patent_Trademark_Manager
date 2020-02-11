@@ -60,6 +60,11 @@ class Renewal_serializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
+class Search_serializer(serializers.ModelSerializer):
+    class Meta:
+        models = SearchAction
+        fields = '__all__'
+
 
 
 
