@@ -53,7 +53,12 @@ class Registration_serializer(serializers.ModelSerializer):
         models = RegistrationAction
         fields = '__all__'
 
-        
+
+class Renewal_serializer(serializers.ModelSerializer):
+    class Meta:
+        models = RenewalAction
+        fields = '__all__'
+
 
 
 
