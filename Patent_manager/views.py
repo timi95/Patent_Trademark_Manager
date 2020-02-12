@@ -10,4 +10,9 @@ class PatentParticulars_view(generics.ListCreateAPIView,
                     generics.RetrieveUpdateDestroyAPIView):
     queryset = PatentParticulars.objects.all()
     serializer_class = PatentParticulars_serializer
-    pass
+
+
+class AmendementAction_view(generics.ListCreateAPIView,
+                            generics.RetrieveUpdateDestroyAPIView):
+    queryset = AmendementAction.objects.all()
+    serializer_class = AmendementAction_serializer
