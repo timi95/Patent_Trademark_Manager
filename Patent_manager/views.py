@@ -42,3 +42,8 @@ class CTC_view(generics.ListCreateAPIView,
     serializer_class = CTC_serializer
 
 
+class ProcurementOfCertification_view(generics.ListCreateAPIView,
+                                  generics.RetrieveUpdateDestroyAPIView):
+    queryset = ProcurementOfCertificateAction
+    serialzer_class = ProcurementOfCertification_serializer
+
