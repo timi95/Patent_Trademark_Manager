@@ -17,7 +17,23 @@ class AmendementAction_view(generics.ListCreateAPIView,
     queryset = AmendementAction.objects.all()
     serializer_class = AmendementAction_serializer
 
+
 class AssignmentMergerAction_view(generics.ListCreateAPIView,
                                   generics.RetrieveUpdateDestroyAPIView):
     queryset = AssignmentMergerAction.objects.all()
     serializer_class = AssignmentMergerAction_serializer
+
+
+class ChangeOfAddress_view(generics.ListCreateAPIView,
+                                  generics.RetrieveUpdateDestroyAPIView):
+    queryset = ChangeOfAddressAction.objects.all()                                  
+    serializer_class = ChangeOfAddress_serializer
+
+
+class ChangeOfName_view(generics.ListCreateAPIView,
+                                  generics.RetrieveUpdateDestroyAPIView):
+    queryset = ChangeOfNameAction.objexts.all()
+    serializer_class = ChangeOfName_serializer
+
+
+# class 
