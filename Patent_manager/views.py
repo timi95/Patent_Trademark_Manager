@@ -8,14 +8,14 @@ from .serializers import *
 # Create your views here.
 class PatentParticulars_view(generics.ListCreateAPIView,
                     generics.RetrieveUpdateDestroyAPIView):
-    queryset = PatentParticulars.objects.all()
+    queryset = PatentParticlars.objects.all()
     serializer_class = PatentParticulars_serializer
 
 
 class AmendementAction_view(generics.ListCreateAPIView,
                             generics.RetrieveUpdateDestroyAPIView):
-    queryset = AmendementAction.objects.all()
-    serializer_class = AmendementAction_serializer
+    queryset = AmendmentAction.objects.all()
+    serializer_class = AmendmentAction_serializer
 
 
 class AssignmentMergerAction_view(generics.ListCreateAPIView,
@@ -54,3 +54,13 @@ class Registration_view(generics.ListCreateAPIView,
     serializer_class = Registration_serializer
 
 
+class Renewals_view(generics.ListCreateAPIView,
+                                  generics.RetrieveUpdateDestroyAPIView):
+    queryset = RenewalAction
+    serializer_class = Registration_serializer
+
+
+class Search_view(generics.ListCreateAPIView,
+                  generics.RetrieveUpdateDestroyAPIView):
+    queryset = SearchAction
+    serializer_class = Search_serializer
