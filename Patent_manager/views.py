@@ -25,15 +25,20 @@ class AssignmentMergerAction_view(generics.ListCreateAPIView,
 
 
 class ChangeOfAddress_view(generics.ListCreateAPIView,
-                                  generics.RetrieveUpdateDestroyAPIView):
+                        generics.RetrieveUpdateDestroyAPIView):
     queryset = ChangeOfAddressAction.objects.all()                                  
     serializer_class = ChangeOfAddress_serializer
 
 
 class ChangeOfName_view(generics.ListCreateAPIView,
-                                  generics.RetrieveUpdateDestroyAPIView):
+                        generics.RetrieveUpdateDestroyAPIView):
     queryset = ChangeOfNameAction.objexts.all()
     serializer_class = ChangeOfName_serializer
 
 
-# class 
+class CTC_view(generics.ListCreateAPIView,
+                generics.RetrieveUpdateDestroyAPIView):
+    queryset = CTCAction.objects.all()
+    serializer_class = CTC_serializer
+
+
