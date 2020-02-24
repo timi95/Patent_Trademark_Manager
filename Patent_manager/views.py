@@ -32,7 +32,7 @@ class ChangeOfAddress_view(generics.ListCreateAPIView,
 
 class ChangeOfName_view(generics.ListCreateAPIView,
                         generics.RetrieveUpdateDestroyAPIView):
-    queryset = ChangeOfNameAction.objexts.all()
+    queryset = ChangeOfNameAction.objects.all()
     serializer_class = ChangeOfName_serializer
 
 

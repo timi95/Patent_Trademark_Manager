@@ -99,7 +99,7 @@ class ChangeOfAddressAction(models.Model):
     date_received_change_of_address_certificate = models.CharField(default="default value", max_length=50)
     pass
 
-class AssignmentMergerAction(object):
+class AssignmentMergerAction(models.Model):
     assignment_instruction_date = models.DateField()
     assignment_instruction_month = models.CharField(default="default value", max_length=50)
     date_abuja_instructed_assignment = models.CharField(default="default value", max_length=50)

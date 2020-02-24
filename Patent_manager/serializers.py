@@ -44,7 +44,7 @@ class CTC_serializer(serializers.ModelSerializer):
 
 class ProcurementOfCertification_serializer(serializers.ModelSerializer):
     class Meta:
-        models = ProcurementOfCertification
+        models = ProcurementOfCertificateAction
         fields = '__all__'
 
 
