@@ -125,7 +125,7 @@ class SearchAction(models.Model):
 class TrademarkProfile(models.Model):
     applicable_official_fee = models.DecimalField(max_digits=12, decimal_places=2, blank=True, null=True)
     applicable_service_charge = models.DecimalField(max_digits=12, decimal_places=2, blank=True, null=True)
-    trademark_class = models.IntegerField()
+    trademark_class = models.IntegerField(default=0)
     clerk_responsible = models.CharField(default="default value", max_length=50)
     clients_email_address = models.CharField(default="default value", max_length=50)
     clients_id = models.CharField(default="default value", max_length=50)
