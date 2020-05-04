@@ -32,37 +32,37 @@ class ChangeOfAddress_serializer(serializers.ModelSerializer):
 
 class ChangeOfName_serializer(serializers.ModelSerializer):
     class Meta:
-        models = ChangeOfNameAction
+        model = ChangeOfNameAction
         fields = '__all__'
 
 
 class CTC_serializer(serializers.ModelSerializer):
     class Meta:
-        models = CTCAction
+        model = CTCAction
         fields = '__all__'
 
 
 class ProcurementOfCertification_serializer(serializers.ModelSerializer):
     class Meta:
-        models = ProcurementOfCertificateAction
+        model = ProcurementOfCertificateAction
         fields = '__all__'
 
 
 class Registration_serializer(serializers.ModelSerializer):
     class Meta:
-        models = RegistrationAction
+        model = RegistrationAction
         fields = '__all__'
 
 
 class Renewal_serializer(serializers.ModelSerializer):
     class Meta:
-        models = RenewalAction
+        model = RenewalAction
         fields = '__all__'
 
 
 class Search_serializer(serializers.ModelSerializer):
     class Meta:
-        models = SearchAction
+        model = SearchAction
         fields = '__all__'
 
 
