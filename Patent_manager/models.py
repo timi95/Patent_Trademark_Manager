@@ -113,7 +113,7 @@ class AssignmentMergerAction(models.Model):
     pass
 
 class AmendmentAction(models.Model):
-    date_ammendment_instruction_received = models.DateField()
+    date_amendment_instruction_received = models.DateField()
     nature_of_amendment = models.CharField(default="default value", max_length=50)
     amending_clerk = models.CharField(default="default value", max_length=50)
     date_amending_clerk_instructed = models.CharField(default="default value", max_length=50)
