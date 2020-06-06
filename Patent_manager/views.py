@@ -8,61 +8,87 @@ from .serializers import *
 # Create your views here.
 # I need to make separate classes inheriting from the list-create views, and RUD views
 # I need to update my naming strategy, the underscore is annoying
-class PatentParticulars_view(generics.ListCreateAPIView,
-                    generics.RetrieveUpdateDestroyAPIView):
+
+# Patent Particulars 
+class PatentParticularsViewLC(generics.ListCreateAPIView):
     queryset = PatentParticlars.objects.all()
     serializer_class = PatentParticulars_serializer
 
+class PatentParticularsViewRUD(generics.RetrieveUpdateDestroyAPIView):
+    queryset = PatentParticlars.objects.all()
+    serializer_class = PatentParticulars_serializer
 
-class AmendementAction_view(generics.ListCreateAPIView,
-                            generics.RetrieveUpdateDestroyAPIView):
+# Ammendment Action
+class AmendementActionViewLC(generics.ListCreateAPIView):
     queryset = AmendmentAction.objects.all()
     serializer_class = AmendmentAction_serializer
 
+class AmendementActionViewRUD(generics.RetrieveUpdateDestroyAPIView):
+    queryset = AmendmentAction.objects.all()
+    serializer_class = AmendmentAction_serializer
 
-class AssignmentMergerAction_view(generics.ListCreateAPIView,
-                                  generics.RetrieveUpdateDestroyAPIView):
+# Assignment merger
+class AssignmentMergerActionViewLC(generics.ListCreateAPIView):
     queryset = AssignmentMergerAction.objects.all()
     serializer_class = AssignmentMergerAction_serializer
+    
+class AssignmentMergerActionViewRUD(generics.RetrieveUpdateDestroyAPIView):
+    queryset = AssignmentMergerAction.objects.all()
+    serializer_class = AssignmentMergerAction_serializer    
 
 
-class ChangeOfAddress_view(generics.ListCreateAPIView,
-                        generics.RetrieveUpdateDestroyAPIView):
+# ChangeOFAdressView
+class ChangeOfAddressViewLC(generics.ListCreateAPIView):
+    queryset = ChangeOfAddressAction.objects.all()                                  
+    serializer_class = ChangeOfAddress_serializer
+class ChangeOfAddressViewRUD(generics.RetrieveUpdateDestroyAPIView):
     queryset = ChangeOfAddressAction.objects.all()                                  
     serializer_class = ChangeOfAddress_serializer
 
-
-class ChangeOfName_view(generics.ListCreateAPIView,
-                        generics.RetrieveUpdateDestroyAPIView):
+# ChangeOfNameView
+class ChangeOfNameViewLC(generics.ListCreateAPIView):
+    queryset = ChangeOfNameAction.objects.all()
+    serializer_class = ChangeOfName_serializer
+class ChangeOfNameViewRUD(generics.RetrieveUpdateDestroyAPIView):
     queryset = ChangeOfNameAction.objects.all()
     serializer_class = ChangeOfName_serializer
 
-
-class CTC_view(generics.ListCreateAPIView,
-                generics.RetrieveUpdateDestroyAPIView):
+# CTCView
+class CTCViewLC(generics.ListCreateAPIView):
+    queryset = CTCAction.objects.all()
+    serializer_class = CTC_serializer
+class CTCViewRUD(generics.RetrieveUpdateDestroyAPIView):
     queryset = CTCAction.objects.all()
     serializer_class = CTC_serializer
 
-
-class ProcurementOfCertification_view(generics.ListCreateAPIView,
-                                     generics.RetrieveUpdateDestroyAPIView):
+# ProcurementOfCertificationView
+class ProcurementOfCertificationViewLC(generics.ListCreateAPIView):
+    queryset = ProcurementOfCertificateAction
+    serializer_class = ProcurementOfCertification_serializer
+class ProcurementOfCertificationViewRUD(generics.RetrieveUpdateDestroyAPIView):
     queryset = ProcurementOfCertificateAction
     serializer_class = ProcurementOfCertification_serializer
 
-
-class Registration_view(generics.ListCreateAPIView,
-                        generics.RetrieveUpdateDestroyAPIView):
+# RegistrationView
+class RegistrationViewLC(generics.ListCreateAPIView):
+    queryset = RegistrationAction
+    serializer_class = Registration_serializer
+class RegistrationViewRUD(generics.RetrieveUpdateDestroyAPIView):
     queryset = RegistrationAction
     serializer_class = Registration_serializer
 
-
-class Renewals_view(generics.ListCreateAPIView,
-                                  generics.RetrieveUpdateDestroyAPIView):
+# RenewalsView
+class RenewalsViewLC(generics.ListCreateAPIView):
+    queryset = RenewalAction
+    serializer_class = Registration_serializer
+class RenewalsViewRUD(generics.RetrieveUpdateDestroyAPIView):
     queryset = RenewalAction
     serializer_class = Registration_serializer
 
-
-class Search_view(generics.ListCreateAPIView,
-                  generics.RetrieveUpdateDestroyAPIView):
+# SearchView
+class SearchViewLC(generics.ListCreateAPIView):
+    queryset = SearchAction
+    serializer_class = Search_serializer
+class SearchViewRUD(generics.RetrieveUpdateDestroyAPIView):
     queryset = SearchAction
     serializer_class = Search_serializer
