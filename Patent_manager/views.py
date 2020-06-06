@@ -6,6 +6,8 @@ from .models import *
 from .serializers import *
 
 # Create your views here.
+# I need to make separate classes inheriting from the list-create views, and RUD views
+# I need to update my naming strategy, the underscore is annoying
 class PatentParticulars_view(generics.ListCreateAPIView,
                     generics.RetrieveUpdateDestroyAPIView):
     queryset = PatentParticlars.objects.all()
