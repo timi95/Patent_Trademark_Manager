@@ -7,52 +7,83 @@ from Trademark_excel_assets.excel_service import *
 
 
 # Create your views here.
-class TrademarkProfile_view(generics.ListCreateAPIView,
-                            generics.RetrieveUpdateDestroyAPIView):
+
+# TrademarkProfile
+class TrademarkProfileViewLC(generics.ListCreateAPIView):
     queryset = TrademarkProfile.objects.all()
     serializer_class = TrademarkProfile_serializer
-    # def dispatch(self, request, args, kwargs):
-    #
+    
+class TrademarkProfileViewRUD(generics.RetrieveUpdateDestroyAPIView):
+    queryset = TrademarkProfile.objects.all()
+    serializer_class = TrademarkProfile_serializer
 
 
-class AmendementAction_view(generics.ListCreateAPIView,
-                            generics.RetrieveUpdateDestroyAPIView):
+# Ammendment Action
+class AmendementActionViewLC(generics.ListCreateAPIView):
+    queryset = AmendementAction.objects.all()
+    serializer_class = AmendementAction_serializer
+
+class AmendementActionViewRUD(generics.RetrieveUpdateDestroyAPIView):
     queryset = AmendementAction.objects.all()
     serializer_class = AmendementAction_serializer
 
 
-class AssignmentMergerAction_view(generics.ListCreateAPIView,
-                                  generics.RetrieveUpdateDestroyAPIView):
+# Assignment Merger
+class AssignmentMergerActionViewLC(generics.ListCreateAPIView):
+    queryset = AssignmentMergerAction.objects.all()
+    serializer_class = AssignmentMergerAction_serializer
+
+class AssignmentMergerActionViewRUD(generics.RetrieveUpdateDestroyAPIView):
     queryset = AssignmentMergerAction.objects.all()
     serializer_class = AssignmentMergerAction_serializer
 
 
-class CertificateProcurementAction_view(generics.ListCreateAPIView,
-                                        generics.RetrieveUpdateDestroyAPIView):
+# Certificate Procurement 
+class CertificateProcurementActionViewLC(generics.ListCreateAPIView):
+    queryset = CertificateProcurementAction.objects.all()
+    serializer_class = CertificateProcurementAction_serializer
+
+class CertificateProcurementActionViewRUD(generics.RetrieveUpdateDestroyAPIView):
     queryset = CertificateProcurementAction.objects.all()
     serializer_class = CertificateProcurementAction_serializer
 
 
-class ChangeName_AddressAction_view(generics.ListCreateAPIView,
-                                        generics.RetrieveUpdateDestroyAPIView):
+# Change Name Address
+class ChangeName_AddressActionViewLC(generics.ListCreateAPIView):
+    queryset = ChangeName_AddressAction.objects.all()
+    serializer_class = ChangeName_AddressAction_serializer
+
+class ChangeName_AddressActionViewRUD(generics.RetrieveUpdateDestroyAPIView):
     queryset = ChangeName_AddressAction.objects.all()
     serializer_class = ChangeName_AddressAction_serializer
 
 
-class RegistrationAction_view(generics.ListCreateAPIView,
-                              generics.RetrieveUpdateDestroyAPIView):
+# Registration
+class RegistrationActionViewLC(generics.ListCreateAPIView):
+    queryset = RegistrationAction.objects.all()
+    serializer_class = RegistrationAction_serializer
+
+class RegistrationActionViewRUD(generics.RetrieveUpdateDestroyAPIView):
     queryset = RegistrationAction.objects.all()
     serializer_class = RegistrationAction_serializer
 
 
-class RenewalAction_view(generics.ListCreateAPIView,
-                         generics.RetrieveUpdateDestroyAPIView):
+# Renewal
+class RenewalActionViewLC(generics.ListCreateAPIView):
+    queryset = RenewalAction.objects.all()
+    serializer_class = RenewalAction_serializer
+
+class RenewalActionViewRUD(generics.RetrieveUpdateDestroyAPIView):
     queryset = RenewalAction.objects.all()
     serializer_class = RenewalAction_serializer
 
 
-class SearchAction_view(generics.ListCreateAPIView,
-                         generics.RetrieveUpdateDestroyAPIView):
+# Search
+class SearchActionViewLC(generics.ListCreateAPIView):
+    queryset = SearchAction.objects.all()
+    serializer_class = SearchAction_serializer
+
+class SearchActionViewRUD(generics.RetrieveUpdateDestroyAPIView):
     queryset = SearchAction.objects.all()
     serializer_class = SearchAction_serializer
 
