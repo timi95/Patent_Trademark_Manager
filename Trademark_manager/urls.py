@@ -5,8 +5,8 @@ from rest_framework_jwt.views import obtain_jwt_token, refresh_jwt_token
 
 
 urlpatterns = [
-    path('ammendement-action/', views.AmendementActionViewLC.as_view()),
-    path('ammendement-action/', views.AmendementActionViewRUD.as_view()),
+    path('amendement-action/', views.AmendementActionViewLC.as_view()),
+    path('amendement-action/', views.AmendementActionViewRUD.as_view()),
 
     path('assignment-merger-action/', views.AssignmentMergerActionViewLC.as_view()),
     path('assignment-merger-action/', views.AssignmentMergerActionViewRUD.as_view()),
