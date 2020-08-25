@@ -63,32 +63,32 @@ class CTCViewRUD(generics.RetrieveUpdateDestroyAPIView):
 
 # ProcurementOfCertificationView
 class ProcurementOfCertificationViewLC(generics.ListCreateAPIView):
-    queryset = ProcurementOfCertificateAction
+    queryset = ProcurementOfCertificateAction.objects.all()
     serializer_class = ProcurementOfCertification_serializer
 class ProcurementOfCertificationViewRUD(generics.RetrieveUpdateDestroyAPIView):
-    queryset = ProcurementOfCertificateAction
+    queryset = ProcurementOfCertificateAction.objects.all()
     serializer_class = ProcurementOfCertification_serializer
 
 # RegistrationView
 class RegistrationViewLC(generics.ListCreateAPIView):
-    queryset = RegistrationAction
+    queryset = RegistrationAction.objects.all()
     serializer_class = Registration_serializer
 class RegistrationViewRUD(generics.RetrieveUpdateDestroyAPIView):
-    queryset = RegistrationAction
+    queryset = RegistrationAction.objects.all()
     serializer_class = Registration_serializer
 
 # RenewalsView
 class RenewalsViewLC(generics.ListCreateAPIView):
-    queryset = RenewalAction
+    queryset = RenewalAction.objects.all()
     serializer_class = Registration_serializer
 class RenewalsViewRUD(generics.RetrieveUpdateDestroyAPIView):
-    queryset = RenewalAction
+    queryset = RenewalAction.objects.all()
     serializer_class = Registration_serializer
 
 # SearchView
 class SearchViewLC(generics.ListCreateAPIView):
-    queryset = SearchAction
+    queryset = SearchAction.objects.all()
     serializer_class = Search_serializer
 class SearchViewRUD(generics.RetrieveUpdateDestroyAPIView):
-    queryset = SearchAction
+    queryset = SearchAction.objects.all()
     serializer_class = Search_serializer

@@ -87,7 +87,7 @@ class ChangeOfNameAction(models.Model):
     new_name_of_patentee = models.CharField(default="default value", max_length=50)
     clerk_for_change_of_name = models.CharField(default="default value", max_length=50)
     status_of_change_of_name = models.CharField(default="default value", max_length=50)
-    date_received_change_of_name_certificate  = models.DateField()
+    date_received_change_of_name_certificate = models.DateField()
     pass
 
 class ChangeOfAddressAction(models.Model):
