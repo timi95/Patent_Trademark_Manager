@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.shortcuts import render
 from django.http import FileResponse, HttpResponse, Http404
 from rest_framework import generics, filters, pagination
+from django_filters.rest_framework import DjangoFilterBackend
 from .models import *
 from .serializers import *
 
@@ -13,6 +14,8 @@ from .serializers import *
 class PatentParticularsViewLC(generics.ListCreateAPIView):
     queryset = PatentParticlars.objects.all()
     serializer_class = PatentParticulars_serializer
+    filter_backends = [filters.OrderingFilter]
+    ordering_fields = ['date_reported_to_client']
 
 class PatentParticularsViewRUD(generics.RetrieveUpdateDestroyAPIView):
     queryset = PatentParticlars.objects.all()
