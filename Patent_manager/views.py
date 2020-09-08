@@ -2,9 +2,10 @@ from django.shortcuts import render
 from django.shortcuts import render
 from django.http import FileResponse, HttpResponse, Http404
 from rest_framework import generics, filters, pagination
-from django_filters.rest_framework import DjangoFilterBackend
+from django_filters.rest_framework import DjangoFilterBackend,DateTimeFromToRangeFilter
 from .models import *
 from .serializers import *
+from .custom_filters import *
 
 # Create your views here.
 # I need to make separate classes inheriting from the list-create views, and RUD views
@@ -15,7 +16,8 @@ class PatentParticularsViewLC(generics.ListCreateAPIView):
     queryset = PatentParticlars.objects.all()
     serializer_class = PatentParticulars_serializer
     filter_backends = [filters.OrderingFilter]
-    ordering_fields = ['date_reported_to_client']
+    ordering_fields = '__all__'
+    
 
 class PatentParticularsViewRUD(generics.RetrieveUpdateDestroyAPIView):
     queryset = PatentParticlars.objects.all()
@@ -25,6 +27,9 @@ class PatentParticularsViewRUD(generics.RetrieveUpdateDestroyAPIView):
 class AmendementActionViewLC(generics.ListCreateAPIView):
     queryset = AmendmentAction.objects.all()
     serializer_class = AmendmentAction_serializer
+    filter_backends = [filters.OrderingFilter]
+    # filterset_class = AmendmentActionDateRangeFilter
+    ordering_fields = '__all__'
 
 class AmendementActionViewRUD(generics.RetrieveUpdateDestroyAPIView):
     queryset = AmendmentAction.objects.all()
@@ -34,16 +39,20 @@ class AmendementActionViewRUD(generics.RetrieveUpdateDestroyAPIView):
 class AssignmentMergerActionViewLC(generics.ListCreateAPIView):
     queryset = AssignmentMergerAction.objects.all()
     serializer_class = AssignmentMergerAction_serializer
-    
+    filter_backends = [filters.OrderingFilter]
+    ordering_fields = '__all__'
+        
 class AssignmentMergerActionViewRUD(generics.RetrieveUpdateDestroyAPIView):
     queryset = AssignmentMergerAction.objects.all()
     serializer_class = AssignmentMergerAction_serializer    
-
 
 # ChangeOFAdressView
 class ChangeOfAddressViewLC(generics.ListCreateAPIView):
     queryset = ChangeOfAddressAction.objects.all()                                  
     serializer_class = ChangeOfAddress_serializer
+    filter_backends = [filters.OrderingFilter]
+    ordering_fields = '__all__'
+
 class ChangeOfAddressViewRUD(generics.RetrieveUpdateDestroyAPIView):
     queryset = ChangeOfAddressAction.objects.all()                                  
     serializer_class = ChangeOfAddress_serializer
@@ -52,6 +61,9 @@ class ChangeOfAddressViewRUD(generics.RetrieveUpdateDestroyAPIView):
 class ChangeOfNameViewLC(generics.ListCreateAPIView):
     queryset = ChangeOfNameAction.objects.all()
     serializer_class = ChangeOfName_serializer
+    filter_backends = [filters.OrderingFilter]
+    ordering_fields = '__all__'
+
 class ChangeOfNameViewRUD(generics.RetrieveUpdateDestroyAPIView):
     queryset = ChangeOfNameAction.objects.all()
     serializer_class = ChangeOfName_serializer
@@ -60,6 +72,9 @@ class ChangeOfNameViewRUD(generics.RetrieveUpdateDestroyAPIView):
 class CTCViewLC(generics.ListCreateAPIView):
     queryset = CTCAction.objects.all()
     serializer_class = CTC_serializer
+    filter_backends = [filters.OrderingFilter]
+    ordering_fields = '__all__'
+
 class CTCViewRUD(generics.RetrieveUpdateDestroyAPIView):
     queryset = CTCAction.objects.all()
     serializer_class = CTC_serializer
@@ -68,6 +83,9 @@ class CTCViewRUD(generics.RetrieveUpdateDestroyAPIView):
 class ProcurementOfCertificationViewLC(generics.ListCreateAPIView):
     queryset = ProcurementOfCertificateAction.objects.all()
     serializer_class = ProcurementOfCertification_serializer
+    filter_backends = [filters.OrderingFilter]
+    ordering_fields = '__all__'
+
 class ProcurementOfCertificationViewRUD(generics.RetrieveUpdateDestroyAPIView):
     queryset = ProcurementOfCertificateAction.objects.all()
     serializer_class = ProcurementOfCertification_serializer
@@ -76,6 +94,9 @@ class ProcurementOfCertificationViewRUD(generics.RetrieveUpdateDestroyAPIView):
 class RegistrationViewLC(generics.ListCreateAPIView):
     queryset = RegistrationAction.objects.all()
     serializer_class = Registration_serializer
+    filter_backends = [filters.OrderingFilter]
+    ordering_fields = '__all__'
+
 class RegistrationViewRUD(generics.RetrieveUpdateDestroyAPIView):
     queryset = RegistrationAction.objects.all()
     serializer_class = Registration_serializer
@@ -84,6 +105,9 @@ class RegistrationViewRUD(generics.RetrieveUpdateDestroyAPIView):
 class RenewalsViewLC(generics.ListCreateAPIView):
     queryset = RenewalAction.objects.all()
     serializer_class = Registration_serializer
+    filter_backends = [filters.OrderingFilter]
+    ordering_fields = '__all__'
+
 class RenewalsViewRUD(generics.RetrieveUpdateDestroyAPIView):
     queryset = RenewalAction.objects.all()
     serializer_class = Registration_serializer
@@ -92,6 +116,9 @@ class RenewalsViewRUD(generics.RetrieveUpdateDestroyAPIView):
 class SearchViewLC(generics.ListCreateAPIView):
     queryset = SearchAction.objects.all()
     serializer_class = Search_serializer
+    filter_backends = [filters.OrderingFilter]
+    ordering_fields = '__all__'
+
 class SearchViewRUD(generics.RetrieveUpdateDestroyAPIView):
     queryset = SearchAction.objects.all()
     serializer_class = Search_serializer
