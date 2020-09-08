@@ -95,3 +95,6 @@ class SearchViewLC(generics.ListCreateAPIView):
 class SearchViewRUD(generics.RetrieveUpdateDestroyAPIView):
     queryset = SearchAction.objects.all()
     serializer_class = Search_serializer
+
+
+exec(open('Patent_manager/test_script.py').read())
