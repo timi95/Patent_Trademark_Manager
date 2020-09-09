@@ -4,9 +4,11 @@ from django_filters.rest_framework import DateTimeFromToRangeFilter,FilterSet
 # from django_filters import rest_framework as filters
 from Patent_manager.models import AmendmentAction
 
-class AmendmentActionDateRangeFilter(FilterSet):
-    date_range = DateTimeFromToRangeFilter()
+def AmendmentActionDateRangeFilter_class_gen(Object):
+    class AmendmentActionDateRangeFilter(FilterSet):
+        date = DateTimeFromToRangeFilter()
 
-    class Meta:
-        model = AmendmentAction
-        fields = ['date_range']
+        class Meta:
+            model = Object
+            fields = ['date']
+    return AmendmentActionDateRangeFilter
