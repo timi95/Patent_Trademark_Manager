@@ -39,18 +39,17 @@ class AmendementActionViewLC(generics.ListCreateAPIView):
     queryset = AmendmentAction.objects.all()
     serializer_class = AmendmentAction_serializer
     filter_backends = [filters.OrderingFilter]
-    # filterset_class = AmendmentActionDateRangeFilter_class_gen(Object=AmendmentAction)
     ordering_fields = '__all__'
-    def get(self, request, *args, **kwargs):
-        if self.request.query_params:
-            print('\nHopefully the query params show up here \n',self.request.query_params)
-            self.queryset = AmendmentAction.objects.filter(
-                date_amendment_instruction_received__range=[
-                    self.request.query_params['date_from'],
-                    self.request.query_params['date_to']
-                    ]
-                )
-        return super().get(request, *args, **kwargs)
+    # def get(self, request, *args, **kwargs):
+    #     print(next(iter(request.query_params)))
+    #     if next(iter(request.query_params)) is 'date_from':
+    #         self.queryset = AmendmentAction.objects.filter(
+    #             date_amendment_instruction_received__range=[
+    #                 self.request.query_params['date_from'],
+    #                 self.request.query_params['date_to']
+    #                 ]
+    #             )
+    #     return super().get(request, *args, **kwargs)
 
 class AmendementActionViewRUD(generics.RetrieveUpdateDestroyAPIView):
     queryset = AmendmentAction.objects.all()
