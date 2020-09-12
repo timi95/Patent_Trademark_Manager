@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.shortcuts import render
 from django.http import FileResponse, HttpResponse, Http404
-from rest_framework import generics, filters, pagination
+from rest_framework import generics, filters
 from django_filters.rest_framework import DjangoFilterBackend,DateTimeFromToRangeFilter
 from .models import *
 from .serializers import *
@@ -40,6 +40,7 @@ class AmendementActionViewLC(generics.ListCreateAPIView):
     serializer_class = AmendmentAction_serializer
     filter_backends = [filters.OrderingFilter]
     ordering_fields = '__all__'
+    # Ask about this get override on the django Discord
     def get(self, request, *args, **kwargs):
         print(list(iter(request.query_params)))
         if request.query_params and list(iter(request.query_params))[0] is 'date_from':
@@ -49,6 +50,7 @@ class AmendementActionViewLC(generics.ListCreateAPIView):
                     self.request.query_params['date_to']
                     ]
                 )
+            print('\nqueryset: ',self.queryset)
         return super().get(request, *args, **kwargs)
 
 class AmendementActionViewRUD(generics.RetrieveUpdateDestroyAPIView):
