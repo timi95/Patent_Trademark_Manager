@@ -42,7 +42,7 @@ class AmendementActionViewLC(generics.ListCreateAPIView):
     ordering_fields = '__all__'
     def get(self, request, *args, **kwargs):
         print(list(iter(request.query_params)))
-        if list(iter(request.query_params))[0] is 'date_from':
+        if request.query_params and list(iter(request.query_params))[0] is 'date_from':
             self.queryset = AmendmentAction.objects.filter(
                 date_amendment_instruction_received__range=[
                     self.request.query_params['date_from'],
