@@ -42,8 +42,8 @@ class AmendementActionViewLC(generics.ListCreateAPIView):
     ordering_fields = '__all__'
     # Ask about this get override on the django Discord
     def get(self, request, *args, **kwargs):
-        print(list(iter(request.query_params)))
-        if request.query_params and list(iter(request.query_params))[0] is 'date_from':
+        print(list(iter(request.query_params))[0])
+        if request.query_params and list(iter(request.query_params))[0] == 'date_from':
             self.queryset = AmendmentAction.objects.filter(
                 date_amendment_instruction_received__range=[
                     self.request.query_params['date_from'],
