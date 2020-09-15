@@ -29,6 +29,35 @@ class PatentParticularsViewLC(generics.ListCreateAPIView):
     serializer_class = PatentParticulars_serializer
     filter_backends = [filters.OrderingFilter]
     ordering_fields = '__all__'
+    def get(self, request, *args, **kwargs):
+        if request.query_params and list(iter(request.query_params))[0] == 'date_from':
+            self.queryset = PatentParticlars.objects.filter(
+                Q(date_outgoing_abuja_schedule__range=[
+                    self.request.query_params['date_from'],
+                    self.request.query_params['date_to']
+                    ])|
+                Q(date_incoming_abuja_schedule__range=[
+                    self.request.query_params['date_from'],
+                    self.request.query_params['date_to']
+                    ])|
+                Q(date_completed_job_received__range=[
+                    self.request.query_params['date_from'],
+                    self.request.query_params['date_to']
+                    ])|
+                Q(date_of_instruction__range=[
+                    self.request.query_params['date_from'],
+                    self.request.query_params['date_to']
+                    ])|
+                Q(date_instruction_received__range=[
+                    self.request.query_params['date_from'],
+                    self.request.query_params['date_to']
+                    ])|
+                Q(date_certificate_procurement_due__range=[
+                    self.request.query_params['date_from'],
+                    self.request.query_params['date_to']
+                    ])                
+                )
+        return super().get(request, *args, **kwargs)    
     
 
 class PatentParticularsViewRUD(generics.RetrieveUpdateDestroyAPIView):
