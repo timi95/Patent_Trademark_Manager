@@ -198,15 +198,16 @@ class ProcurementOfCertificationViewLC(generics.ListCreateAPIView):
     def get(self, request, *args, **kwargs):
         if request.query_params and list(iter(request.query_params))[0] == 'date_from':
             self.queryset = ProcurementOfCertificateAction.objects.filter(
-                Q(date_procurement_instructed__range=[
-                    self.request.query_params['date_from'],
-                    self.request.query_params['date_to']
-                    ])|
-                Q(date_cert_procurement_due__range=[
-                    self.request.query_params['date_from'],
-                    self.request.query_params['date_to']
-                    ])          
-                )    
+            Q(date_procurement_instructed__range=[
+                self.request.query_params['date_from'],
+                self.request.query_params['date_to']
+                ])|
+            Q(date_cert_procurement_due__range=[
+                self.request.query_params['date_from'],
+                self.request.query_params['date_to']
+                ]) 
+            )
+        return super().get(request, *args, **kwargs)     
 
 class ProcurementOfCertificationViewRUD(generics.RetrieveUpdateDestroyAPIView):
     queryset = ProcurementOfCertificateAction.objects.all()
@@ -245,7 +246,8 @@ class RegistrationViewLC(generics.ListCreateAPIView):
                     self.request.query_params['date_from'],
                     self.request.query_params['date_to']
                     ])                                                      
-                )      
+                )
+        return super().get(request, *args, **kwargs)     
 
 class RegistrationViewRUD(generics.RetrieveUpdateDestroyAPIView):
     queryset = RegistrationAction.objects.all()
@@ -292,7 +294,8 @@ class RenewalsViewLC(generics.ListCreateAPIView):
                     self.request.query_params['date_from'],
                     self.request.query_params['date_to']
                     ])                                                       
-                )      
+                )
+        return super().get(request, *args, **kwargs)           
 
 
 class RenewalsViewRUD(generics.RetrieveUpdateDestroyAPIView):
@@ -312,7 +315,8 @@ class SearchViewLC(generics.ListCreateAPIView):
                     self.request.query_params['date_from'],
                     self.request.query_params['date_to']
                     ])                                                
-                )      
+                )
+        return super().get(request, *args, **kwargs)     
 
 
 class SearchViewRUD(generics.RetrieveUpdateDestroyAPIView):
