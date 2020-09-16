@@ -98,6 +98,24 @@ class AssignmentMergerActionViewLC(generics.ListCreateAPIView):
     serializer_class = AssignmentMergerAction_serializer
     filter_backends = [filters.OrderingFilter]
     ordering_fields = '__all__'
+    def get(self, request, *args, **kwargs):
+        if request.query_params and list(iter(request.query_params))[0] == 'date_from':
+            self.queryset = AssignmentMergerAction.objects.filter(
+                Q(date_assignment_certificate_received__range=[
+                    self.request.query_params['date_from'],
+                    self.request.query_params['date_to']
+                    ])|
+                Q(date_abuja_instructed_assignment__range=[
+                    self.request.query_params['date_from'],
+                    self.request.query_params['date_to']
+                    ])|
+                Q(assignment_instruction_date__range=[
+                    self.request.query_params['date_from'],
+                    self.request.query_params['date_to']
+                    ])              
+                )
+        return super().get(request, *args, **kwargs)    
+  
         
 class AssignmentMergerActionViewRUD(generics.RetrieveUpdateDestroyAPIView):
     queryset = AssignmentMergerAction.objects.all()
