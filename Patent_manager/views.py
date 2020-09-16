@@ -127,6 +127,19 @@ class ChangeOfAddressViewLC(generics.ListCreateAPIView):
     serializer_class = ChangeOfAddress_serializer
     filter_backends = [filters.OrderingFilter]
     ordering_fields = '__all__'
+    def get(self, request, *args, **kwargs):
+        if request.query_params and list(iter(request.query_params))[0] == 'date_from':
+            self.queryset = ChangeOfAddressAction.objects.filter(
+                Q(change_of_address_instruction_date__range=[
+                    self.request.query_params['date_from'],
+                    self.request.query_params['date_to']
+                    ])|
+                Q(date_received_change_of_address_certificate__range=[
+                    self.request.query_params['date_from'],
+                    self.request.query_params['date_to']
+                    ])          
+                )
+        return super().get(request, *args, **kwargs)     
 
 class ChangeOfAddressViewRUD(generics.RetrieveUpdateDestroyAPIView):
     queryset = ChangeOfAddressAction.objects.all()                                  
@@ -138,6 +151,19 @@ class ChangeOfNameViewLC(generics.ListCreateAPIView):
     serializer_class = ChangeOfName_serializer
     filter_backends = [filters.OrderingFilter]
     ordering_fields = '__all__'
+    def get(self, request, *args, **kwargs):
+        if request.query_params and list(iter(request.query_params))[0] == 'date_from':
+            self.queryset = ChangeOfNameAction.objects.filter(
+                Q(change_of_name_instruction_date__range=[
+                    self.request.query_params['date_from'],
+                    self.request.query_params['date_to']
+                    ])|
+                Q(date_received_change_of_name_certificate__range=[
+                    self.request.query_params['date_from'],
+                    self.request.query_params['date_to']
+                    ])          
+                )
+        return super().get(request, *args, **kwargs)       
 
 class ChangeOfNameViewRUD(generics.RetrieveUpdateDestroyAPIView):
     queryset = ChangeOfNameAction.objects.all()
@@ -149,6 +175,15 @@ class CTCViewLC(generics.ListCreateAPIView):
     serializer_class = CTC_serializer
     filter_backends = [filters.OrderingFilter]
     ordering_fields = '__all__'
+    def get(self, request, *args, **kwargs):
+        if request.query_params and list(iter(request.query_params))[0] == 'date_from':
+            self.queryset = CTCAction.objects.filter(
+                Q(date_applied_for_ctc__range=[
+                    self.request.query_params['date_from'],
+                    self.request.query_params['date_to']
+                    ])          
+                )
+        return super().get(request, *args, **kwargs)     
 
 class CTCViewRUD(generics.RetrieveUpdateDestroyAPIView):
     queryset = CTCAction.objects.all()
@@ -160,6 +195,18 @@ class ProcurementOfCertificationViewLC(generics.ListCreateAPIView):
     serializer_class = ProcurementOfCertification_serializer
     filter_backends = [filters.OrderingFilter]
     ordering_fields = '__all__'
+    def get(self, request, *args, **kwargs):
+        if request.query_params and list(iter(request.query_params))[0] == 'date_from':
+            self.queryset = ProcurementOfCertificateAction.objects.filter(
+                Q(date_procurement_instructed__range=[
+                    self.request.query_params['date_from'],
+                    self.request.query_params['date_to']
+                    ])|
+                Q(date_cert_procurement_due__range=[
+                    self.request.query_params['date_from'],
+                    self.request.query_params['date_to']
+                    ])          
+                )    
 
 class ProcurementOfCertificationViewRUD(generics.RetrieveUpdateDestroyAPIView):
     queryset = ProcurementOfCertificateAction.objects.all()
@@ -171,6 +218,34 @@ class RegistrationViewLC(generics.ListCreateAPIView):
     serializer_class = Registration_serializer
     filter_backends = [filters.OrderingFilter]
     ordering_fields = '__all__'
+    def get(self, request, *args, **kwargs):
+        if request.query_params and list(iter(request.query_params))[0] == 'date_from':
+            self.queryset = RegistrationAction.objects.filter(
+                Q(date_registration_instruction_received__range=[
+                    self.request.query_params['date_from'],
+                    self.request.query_params['date_to']
+                    ])|
+                Q(date_abuja_instructed_for_registration__range=[
+                    self.request.query_params['date_from'],
+                    self.request.query_params['date_to']
+                    ])|
+                Q(acceptance_date__range=[
+                    self.request.query_params['date_from'],
+                    self.request.query_params['date_to']
+                    ])|
+                Q(cert_procurement_date__range=[
+                    self.request.query_params['date_from'],
+                    self.request.query_params['date_to']
+                    ])|
+                Q(correspondence_date__range=[
+                    self.request.query_params['date_from'],
+                    self.request.query_params['date_to']
+                    ])|
+                Q(date_of_instruction__range=[
+                    self.request.query_params['date_from'],
+                    self.request.query_params['date_to']
+                    ])                                                      
+                )      
 
 class RegistrationViewRUD(generics.RetrieveUpdateDestroyAPIView):
     queryset = RegistrationAction.objects.all()
@@ -182,6 +257,43 @@ class RenewalsViewLC(generics.ListCreateAPIView):
     serializer_class = Registration_serializer
     filter_backends = [filters.OrderingFilter]
     ordering_fields = '__all__'
+    def get(self, request, *args, **kwargs):
+        if request.query_params and list(iter(request.query_params))[0] == 'date_from':
+            self.queryset = RenewalAction.objects.filter(
+                Q(patent_start_date__range=[
+                    self.request.query_params['date_from'],
+                    self.request.query_params['date_to']
+                    ])|
+                Q(patent_end_date__range=[
+                    self.request.query_params['date_from'],
+                    self.request.query_params['date_to']
+                    ])|
+                Q(renewal_instruction_date__range=[
+                    self.request.query_params['date_from'],
+                    self.request.query_params['date_to']
+                    ])|
+                Q(renewal_due_date__range=[
+                    self.request.query_params['date_from'],
+                    self.request.query_params['date_to']
+                    ])|
+                Q(date_abuja_instructed_renewal__range=[
+                    self.request.query_params['date_from'],
+                    self.request.query_params['date_to']
+                    ])|
+                Q(date_renew_cert_received__range=[
+                    self.request.query_params['date_from'],
+                    self.request.query_params['date_to']
+                    ])|
+                Q(next_renewal_due_date__range=[
+                    self.request.query_params['date_from'],
+                    self.request.query_params['date_to']
+                    ])|
+                Q(renewal_extension_of_time__range=[
+                    self.request.query_params['date_from'],
+                    self.request.query_params['date_to']
+                    ])                                                       
+                )      
+
 
 class RenewalsViewRUD(generics.RetrieveUpdateDestroyAPIView):
     queryset = RenewalAction.objects.all()
@@ -193,6 +305,15 @@ class SearchViewLC(generics.ListCreateAPIView):
     serializer_class = Search_serializer
     filter_backends = [filters.OrderingFilter]
     ordering_fields = '__all__'
+    def get(self, request, *args, **kwargs):
+        if request.query_params and list(iter(request.query_params))[0] == 'date_from':
+            self.queryset = SearchAction.objects.filter(
+                Q(date_reported_to_client__range=[
+                    self.request.query_params['date_from'],
+                    self.request.query_params['date_to']
+                    ])                                                
+                )      
+
 
 class SearchViewRUD(generics.RetrieveUpdateDestroyAPIView):
     queryset = SearchAction.objects.all()

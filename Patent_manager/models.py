@@ -31,7 +31,7 @@ class RenewalAction(models.Model):
 
 class RegistrationAction(models.Model):
     date_registration_instruction_received = models.DateField()
-    month_registration_instruction_received = models.DateField()
+    month_registration_instruction_received = models.CharField(default="default value", max_length=50)
     clerk_registration = models.CharField(default="default value", max_length=50)
     date_abuja_instructed_for_registration = models.DateField()
     convention_priority_ref_1 = models.CharField(default="default value", max_length=50)
@@ -63,12 +63,11 @@ class ProcurementOfCertificateAction(models.Model):
     application_no = models.CharField(default="default value", max_length=50)
     invention_description = models.CharField(default="default value", max_length=50)
     clerk_procuring = models.CharField(default="default value", max_length=50)
-    date_procurement_instructed = models.CharField(default="default value", max_length=50)
     month_clerk_instructed = models.CharField(default="default value", max_length=50)
     procurement_status = models.CharField(default="default value", max_length=50)
-    date_cert_procured = models.CharField(default="default value", max_length=50)
+    date_cert_procured = models.DateField()
     patent_regtn_no = models.CharField(default="default value", max_length=50)
-    date_cert_procurement_due = models.CharField(default="default value", max_length=50)
+    date_cert_procurement_due = models.DateField()
     month_cert_procurement_due = models.CharField(default="default value", max_length=50)
     pass
 
@@ -76,7 +75,7 @@ class CTCAction(models.Model):
     application_no = models.CharField(default="default value", max_length=50)
     patent_registration_no = models.CharField(default="default value", max_length=50)
     ctc_required = models.CharField(default="default value", max_length=50)
-    date_applied_for_ctc = models.CharField(default="default value", max_length=50)
+    date_applied_for_ctc = models.DateField()
     ctc_procurement_status = models.CharField(default="default value", max_length=50)
     clerk_responsible = models.CharField(default="default value", max_length=50)
     pass
@@ -96,7 +95,7 @@ class ChangeOfAddressAction(models.Model):
     new_address_of_patentee = models.CharField(default="default value", max_length=50)
     clerk_of_change_of_address = models.CharField(default="default value", max_length=50)
     status_change_of_address = models.CharField(default="default value", max_length=50)
-    date_received_change_of_address_certificate = models.CharField(default="default value", max_length=50)
+    date_received_change_of_address_certificate = models.DateField()
     pass
 
 class AssignmentMergerAction(models.Model):
