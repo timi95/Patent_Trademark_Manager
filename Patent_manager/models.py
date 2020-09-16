@@ -102,7 +102,7 @@ class ChangeOfAddressAction(models.Model):
 class AssignmentMergerAction(models.Model):
     assignment_instruction_date = models.DateField()
     assignment_instruction_month = models.CharField(default="default value", max_length=50)
-    date_abuja_instructed_assignment = models.CharField(default="default value", max_length=50)
+    date_abuja_instructed_assignment = models.DateField()
     clerk_assignment = models.CharField(default="default value", max_length=50)
     status_assignment_registrations = models.CharField(default="default value", max_length=50)
     assignor = models.CharField(default="default value", max_length=50)
