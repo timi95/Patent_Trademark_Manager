@@ -26,6 +26,10 @@ urlpatterns = [
     path('renewal-action/', views.RenewalActionViewLC.as_view()),
     path('renewal-action/', views.RenewalActionViewRUD.as_view()),
 
+
+    path('reclassification-action/', views.ReclassificationActionViewLC.as_view()),
+    path('reclassification-action/', views.ReclassificationActionViewRUD.as_view()),
+
     path('search-action/', views.SearchActionViewLC.as_view()),
     path('search-action/', views.SearchActionViewRUD.as_view()),
 

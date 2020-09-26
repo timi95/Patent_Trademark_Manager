@@ -78,6 +78,17 @@ class RenewalActionViewRUD(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = RenewalAction_serializer
 
 
+# Reclassification
+class ReclassificationActionViewLC(generics.ListCreateAPIView):
+    queryset = ReclassificationAction.objects.all()
+    serializer_class = ReclassificationAction_serializer
+
+
+class ReclassificationActionViewRUD(generics.RetrieveUpdateDestroyAPIView):
+    queryset = RenewalAction.objects.all()
+    serializer_class = RenewalAction_serializer
+
+
 # Search
 class SearchActionViewLC(generics.ListCreateAPIView):
     queryset = SearchAction.objects.all()
