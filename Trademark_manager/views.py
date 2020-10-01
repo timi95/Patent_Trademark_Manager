@@ -97,8 +97,3 @@ class SearchActionViewLC(generics.ListCreateAPIView):
 class SearchActionViewRUD(generics.RetrieveUpdateDestroyAPIView):
     queryset = SearchAction.objects.all()
     serializer_class = SearchAction_serializer
-
-
-# testing the data wrangling service
-# which will become the import feature from excel files
-HelloService(SearchAction)
