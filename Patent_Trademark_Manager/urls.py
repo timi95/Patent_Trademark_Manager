@@ -27,5 +27,6 @@ urlpatterns = [
 
     path('ApplicationForm_manager/', include('ApplicationForm_manager.urls')),
     path('Patent_manager/', include('Patent_manager.urls')),
-    path('Trademark_manager/', include('Trademark_manager.urls'))
+    path('Trademark_manager/', include('Trademark_manager.urls')),
+    path('Reminders/', include('Reminders.urls'))
 ]

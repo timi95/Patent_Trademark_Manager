@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'Patent_manager',
     'Trademark_manager',
+    'Reminders',
     'ApplicationForm_manager',
     'rest_framework',
     'rest_framework.authtoken',

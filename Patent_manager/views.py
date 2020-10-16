@@ -6,7 +6,6 @@ from django_filters.rest_framework import DjangoFilterBackend,DateTimeFromToRang
 from django.db.models import Q
 from .models import *
 from .serializers import *
-from .custom_filters import *
 from rest_framework.response import Response
 
 # Create your views here.
