@@ -4,6 +4,7 @@ from django.db.models import Q
 from .models import *
 from .serializers import *
 from rest_framework.response import Response
+import asyncio
 
 # Create your views here.
 
@@ -25,3 +26,15 @@ class ReminderViewLC(generics.ListCreateAPIView):
 class ReminderViewRUD(generics.RetrieveUpdateDestroyAPIView):
     queryset = Reminder.objects.all()
     serializer_class = Reminder_serializer
+    
+
+async def reminder_monitoring():
+    for reminder in Reminder.objects.all():
+        print('async function called, reminder here',reminder)
+    
+    # wait for a while then call the function again
+    # await asyncio.sleep(5)
+    # await reminder_monitoring()
+
+
+asyncio.run(reminder_monitoring())

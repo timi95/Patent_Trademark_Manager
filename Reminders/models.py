@@ -8,3 +8,4 @@ class Reminder(models.Model):
     manager_type = models.CharField(default="default value", max_length=50)
     document_type = models.CharField(default="default value", max_length=50)
     document_id = models.CharField(default="default value", max_length=50)
+    matured = models.BooleanField(default=False)

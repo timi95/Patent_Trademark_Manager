@@ -150,8 +150,9 @@ CORS_ORIGIN_WHITELIST = (
 
 # }
 
+
 DATE_INPUT_FORMATS = [
-    ("%y-%m-%d"),
+    ("%y-%m-%d")
 ]
 
 # DATE_FORMAT = 'j F Y'
