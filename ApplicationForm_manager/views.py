@@ -203,7 +203,8 @@ class Form_3_PDFGEN(generics.RetrieveAPIView):
         input = self.get_object().html
 
         try:
-            config = pdfkit.configuration(wkhtmltopdf='/usr/bin/wkhtmltopdf')
+            test_path = '~/.local/share/virtualenvs/Patent_Trademark_Manager-CM2H4pHU/lib/python3.7/site-packages/wkhtmltopdf'
+            config = pdfkit.configuration(wkhtmltopdf=test_path)
             pdfkit.from_string(input, f"Trademark_manager/GeneratedForms/{filename}", configuration=config)
             pdf = open(f"Trademark_manager/GeneratedForms/{filename}", "rb")
             response = HttpResponse(pdf.read(), content_type='application/pdf')
