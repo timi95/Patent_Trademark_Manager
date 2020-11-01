@@ -161,13 +161,13 @@ class Form_1_PDFGEN(generics.RetrieveAPIView):
         input = self.get_object().html
 
         try:
-            config = pdfkit.configuration(wkhtmltopdf='/usr/bin/wkhtmltopdf')
-            pdfkit.from_string(input, f"Trademark_manager/GeneratedForms/{filename}", configuration=config)
-            pdf = open(f"Trademark_manager/GeneratedForms/{filename}", "rb")
+            config = pdfkit.configuration(wkhtmltopdf='wkhtmltopdf')
+            pdfkit.from_string(input, f'GeneratedForms/{filename}', configuration=config)
+            pdf = open(f'GeneratedForms/{filename}', "rb")
             response = HttpResponse(pdf.read(), content_type='application/pdf')
             response['Content-Disposition'] = f'attachment; filename={filename}'
             pdf.close()
-            os.remove(f"Trademark_manager/GeneratedForms/{filename}")
+            os.remove(f'GeneratedForms/{filename}')
             return response
         except FileNotFoundError:
             raise Http404()
@@ -182,13 +182,13 @@ class Form_2_PDFGEN(generics.RetrieveAPIView):
         input = self.get_object().html
 
         try:
-            config = pdfkit.configuration(wkhtmltopdf='/usr/bin/wkhtmltopdf')
-            pdfkit.from_string(input, f"Trademark_manager/GeneratedForms/{filename}", configuration=config)
-            pdf = open(f"Trademark_manager/GeneratedForms/{filename}", "rb")
+            config = pdfkit.configuration(wkhtmltopdf='wkhtmltopdf')
+            pdfkit.from_string(input, f'GeneratedForms/{filename}', configuration=config)
+            pdf = open(f'GeneratedForms/{filename}', "rb")
             response = HttpResponse(pdf.read(), content_type='application/pdf')
             response['Content-Disposition'] = f'attachment; filename={filename}'
             pdf.close()
-            os.remove(f"Trademark_manager/GeneratedForms/{filename}")
+            os.remove(f'GeneratedForms/{filename}')
             return response
         except FileNotFoundError:
             raise Http404()
@@ -201,16 +201,14 @@ class Form_3_PDFGEN(generics.RetrieveAPIView):
     def get(self, request, pk):
         filename = f'Form_3_PDF_ID_{pk}.pdf'
         input = self.get_object().html
-
         try:
-            test_path = '~/.local/share/virtualenvs/Patent_Trademark_Manager-CM2H4pHU/lib/python3.7/site-packages/wkhtmltopdf'
-            config = pdfkit.configuration(wkhtmltopdf=test_path)
-            pdfkit.from_string(input, f"Trademark_manager/GeneratedForms/{filename}", configuration=config)
-            pdf = open(f"Trademark_manager/GeneratedForms/{filename}", "rb")
+            config = pdfkit.configuration(wkhtmltopdf='wkhtmltopdf')
+            pdfkit.from_string(input, f"GeneratedForms/{filename}", configuration=config)
+            pdf = open(f'GeneratedForms/{filename}', "rb")
             response = HttpResponse(pdf.read(), content_type='application/pdf')
             response['Content-Disposition'] = f'attachment; filename={filename}'
             pdf.close()
-            os.remove(f"Trademark_manager/GeneratedForms/{filename}")
+            os.remove(f"GeneratedForms/{filename}")
             return response
         except FileNotFoundError:
             raise Http404()
@@ -225,13 +223,13 @@ class Form_12_PDFGEN(generics.RetrieveAPIView):
         input = self.get_object().html
 
         try:
-            config = pdfkit.configuration(wkhtmltopdf='/usr/bin/wkhtmltopdf')
-            pdfkit.from_string(input, f"Trademark_manager/GeneratedForms/{filename}", configuration=config)
-            pdf = open(f"Trademark_manager/GeneratedForms/{filename}", "rb")
+            config = pdfkit.configuration(wkhtmltopdf='wkhtmltopdf')
+            pdfkit.from_string(input, f'GeneratedForms/{filename}', configuration=config)
+            pdf = open(f'GeneratedForms/{filename}', "rb")
             response = HttpResponse(pdf.read(), content_type='application/pdf')
             response['Content-Disposition'] = f'attachment; filename={filename}'
             pdf.close()
-            os.remove(f"Trademark_manager/GeneratedForms/{filename}")
+            os.remove(f'GeneratedForms/{filename}')
             return response
         except FileNotFoundError:
             raise Http404()
@@ -246,13 +244,13 @@ class Form_17_PDFGEN(generics.RetrieveAPIView):
         input = self.get_object().html
 
         try:
-            config = pdfkit.configuration(wkhtmltopdf='/usr/bin/wkhtmltopdf')
-            pdfkit.from_string(input, f"Trademark_manager/GeneratedForms/{filename}", configuration=config)
-            pdf = open(f"Trademark_manager/GeneratedForms/{filename}", "rb")
+            config = pdfkit.configuration(wkhtmltopdf='wkhtmltopdf')
+            pdfkit.from_string(input, f'GeneratedForms/{filename}', configuration=config)
+            pdf = open(f'GeneratedForms/{filename}', "rb")
             response = HttpResponse(pdf.read(), content_type='application/pdf')
             response['Content-Disposition'] = f'attachment; filename={filename}'
             pdf.close()
-            os.remove(f"Trademark_manager/GeneratedForms/{filename}")
+            os.remove(f'GeneratedForms/{filename}')
             return response
         except FileNotFoundError:
             raise Http404()
@@ -267,13 +265,13 @@ class Form_22_PDFGEN(generics.RetrieveAPIView):
         input = self.get_object().html
 
         try:
-            config = pdfkit.configuration(wkhtmltopdf='/usr/bin/wkhtmltopdf')
-            pdfkit.from_string(input, f"Trademark_manager/GeneratedForms/{filename}", configuration=config)
-            pdf = open(f"Trademark_manager/GeneratedForms/{filename}", "rb")
+            config = pdfkit.configuration(wkhtmltopdf='wkhtmltopdf')
+            pdfkit.from_string(input, f'GeneratedForms/{filename}', configuration=config)
+            pdf = open(f'GeneratedForms/{filename}', "rb")
             response = HttpResponse(pdf.read(), content_type='application/pdf')
             response['Content-Disposition'] = f'attachment; filename={filename}'
             pdf.close()
-            os.remove(f"Trademark_manager/GeneratedForms/{filename}")
+            os.remove(f'GeneratedForms/{filename}')
             return response
         except FileNotFoundError:
             raise Http404()
@@ -288,13 +286,13 @@ class Form_33_PDFGEN(generics.RetrieveAPIView):
         input = self.get_object().html
 
         try:
-            config = pdfkit.configuration(wkhtmltopdf='/usr/bin/wkhtmltopdf')
-            pdfkit.from_string(input, f"Trademark_manager/GeneratedForms/{filename}", configuration=config)
-            pdf = open(f"Trademark_manager/GeneratedForms/{filename}", "rb")
+            config = pdfkit.configuration(wkhtmltopdf='wkhtmltopdf')
+            pdfkit.from_string(input, f'GeneratedForms/{filename}', configuration=config)
+            pdf = open(f'GeneratedForms/{filename}', "rb")
             response = HttpResponse(pdf.read(), content_type='application/pdf')
             response['Content-Disposition'] = f'attachment; filename={filename}'
             pdf.close()
-            os.remove(f"Trademark_manager/GeneratedForms/{filename}")
+            os.remove(f'GeneratedForms/{filename}')
             return response
         except FileNotFoundError:
             raise Http404()
