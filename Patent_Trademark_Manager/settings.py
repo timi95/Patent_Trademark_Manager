@@ -137,6 +137,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 CORS_ORIGIN_WHITELIST = (
+    "https://adoring-benz-97af50.netlify.app",
     'localhost:4200',
 )
 
