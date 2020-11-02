@@ -137,7 +137,7 @@ STATIC_URL = '/static/'
 
 CORS_ORIGIN_WHITELIST = (
     "*",
-    'localhost:4200',
+    # 'localhost:4200',
 )
 
 # REST_FRAMEWORK = {
