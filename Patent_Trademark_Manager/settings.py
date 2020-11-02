@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+import django_heroku
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -163,3 +164,6 @@ DATE_INPUT_FORMATS = [
 # SHORT_DATE_FORMAT = 'j N Y'
 # SHORT_DATETIME_FORMAT = 'j N Y H:i'
 # FIRST_DAY_OF_WEEK = 1
+
+# Activate Django-Heroku.
+django_heroku.settings(locals())
