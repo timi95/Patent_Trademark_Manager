@@ -1,0 +1,1 @@
+web: gunicorn Patent_Trademark_Manager.wsgi
