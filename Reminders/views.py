@@ -1,5 +1,5 @@
 from rest_framework import generics, filters
-from django_filters.rest_framework import DjangoFilterBackend,DateTimeFromToRangeFilter
+# from django_filters.rest_framework import DjangoFilterBackend,DateTimeFromToRangeFilter
 from django.db.models import Q
 from .models import *
 from .serializers import *
