@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
-# import django_heroku
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -26,8 +25,16 @@ SECRET_KEY = 'rxn4gg)2!sb&0^1_9!rdxc#e0%lsc9wijqmnjbmw2(&(%#9f(h'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['0.0.0.0','patent-trademark-manager-demo.herokuapp.com','https://adoring-benz-97af50.netlify.app']
-
+ALLOWED_HOSTS = [
+    '0.0.0.0',
+    'patent-trademark-manager-demo.herokuapp.com',
+    "https://adoring-benz-97af50.netlify.app",
+    'http://localhost:4200',
+]
+CORS_ALLOWED_ORIGINS = [
+    "https://adoring-benz-97af50.netlify.app",
+    'http://localhost:4200',
+]
 
 # Application definition
 
@@ -138,11 +145,6 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 
-CORS_ALLOWED_ORIGINS = [
-    "https://adoring-benz-97af50.netlify.app",
-    'http://localhost:4200',
-]
-
 # REST_FRAMEWORK = {
 # "DATE_INPUT_FORMATS" :[ 
 #     '%d.%m.%Y', '%d.%m.%Y', '%d.%m.%y',  # '25.10.2006', '25.10.2006', '25.10.06'
@@ -167,6 +169,3 @@ DATE_INPUT_FORMATS = [
 # SHORT_DATE_FORMAT = 'j N Y'
 # SHORT_DATETIME_FORMAT = 'j N Y H:i'
 # FIRST_DAY_OF_WEEK = 1
-
-# Activate Django-Heroku.
-# django_heroku.settings(locals())
