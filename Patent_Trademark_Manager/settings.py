@@ -26,7 +26,7 @@ SECRET_KEY = 'rxn4gg)2!sb&0^1_9!rdxc#e0%lsc9wijqmnjbmw2(&(%#9f(h'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['0.0.0.0','patent-trademark-manager-demo.herokuapp.com']
+ALLOWED_HOSTS = ['0.0.0.0','patent-trademark-manager-demo.herokuapp.com','https://adoring-benz-97af50.netlify.app']
 
 
 # Application definition
@@ -137,10 +137,11 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-CORS_ORIGIN_WHITELIST = (
+
+CORS_ALLOWED_ORIGINS = [
     "https://adoring-benz-97af50.netlify.app",
     'http://localhost:4200',
-)
+]
 
 # REST_FRAMEWORK = {
 # "DATE_INPUT_FORMATS" :[ 
