@@ -26,7 +26,7 @@ SECRET_KEY = 'rxn4gg)2!sb&0^1_9!rdxc#e0%lsc9wijqmnjbmw2(&(%#9f(h'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['0.0.0.0']
+ALLOWED_HOSTS = ['0.0.0.0','patent-trademark-manager-demo.herokuapp.com']
 
 
 # Application definition
